@@ -1,0 +1,1949 @@
+repo_name,file_path,short_code_snippet,file_extension
+public-apis/public-apis,dimp170_sonar-analysis-dataset:snippet_0.py,,py
+public-apis/public-apis,dimp170_sonar-analysis-dataset:snippet_1.py,"import unittest
+
+from validate.format import error_message
+from validate.format import get_categories_content
+from validate.format import check_alphabetical_order
+from validate.format import check_tit...",py
+public-apis/public-apis,dimp170_sonar-analysis-dataset:snippet_2.py,"import unittest
+
+from validate.links import find_links_in_text
+from validate.links import check_duplicate_links
+from validate.links import fake_user_agent
+from validate.links import get_host_from_link...",py
+public-apis/public-apis,dimp170_sonar-analysis-dataset:snippet_3.py,"from validate import format
+from validate import links",py
+public-apis/public-apis,dimp170_sonar-analysis-dataset:snippet_4.py,"import re
+import sys
+from string import punctuation
+from typing import List, Tuple, Dict
+
+
+
+punctuation = punctuation.replace('()', '')
+
+anchor = '
+auth_keys = ['apiKey', 'OAuth', 'X-Mashape-Key', 'Us...",py
+donnemartin/system-design-primer,dimp170_sonar-analysis-dataset:snippet_5.py,"from abc import ABCMeta, abstractmethod
+from collections import deque
+from enum import Enum
+
+
+class Rank(Enum):
+
+    OPERATOR = 0
+    SUPERVISOR = 1
+    DIRECTOR = 2
+
+
+class Employee(metaclass=ABCMeta...",py
+donnemartin/system-design-primer,dimp170_sonar-analysis-dataset:snippet_6.py,"from abc import ABCMeta, abstractmethod
+from enum import Enum
+import sys
+
+
+class Suit(Enum):
+
+    HEART = 0
+    DIAMOND = 1
+    CLUBS = 2
+    SPADE = 3
+
+
+class Card(metaclass=ABCMeta):
+
+    def __init...",py
+vinta/awesome-python,dimp170_sonar-analysis-dataset:snippet_7.py,"def sort_blocks():
+    
+    with open('README.md', 'r') as read_me_file:
+        read_me = read_me_file.read()
+
+    
+    table_of_contents = ''.join(read_me.split('- - -')[0])
+    blocks = ''.join(rea...",py
+TheAlgorithms/Python,dimp170_sonar-analysis-dataset:snippet_8.py,"from math import cos, sin, sqrt, tau
+
+from audio_filters.iir_filter import IIRFilter
+
+
+
+
+def make_lowpass(
+    frequency: int,
+    samplerate: int,
+    q_factor: float = 1 / sqrt(2),
+) -> IIRFilter:
+ ...",py
+TheAlgorithms/Python,dimp170_sonar-analysis-dataset:snippet_9.py,"from __future__ import annotations
+
+
+class IIRFilter:
+    r
+
+    def __init__(self, order: int) -> None:
+        self.order = order
+
+        
+        self.a_coeffs = [1.0] + [0.0] * order
+        
+   ...",py
+TheAlgorithms/Python,dimp170_sonar-analysis-dataset:snippet_10.py,"from __future__ import annotations
+
+from abc import abstractmethod
+from math import pi
+from typing import Protocol
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+class FilterType(Protocol):
+   ...",py
+Significant-Gravitas/AutoGPT,dimp170_sonar-analysis-dataset:snippet_11.py,"import json
+import os
+import requests
+import sys
+import time
+from typing import Dict, List, Tuple
+
+CHECK_INTERVAL = 30
+
+
+def get_environment_variables() -> Tuple[str, str, str, str, str]:
+    
+    try...",py
+Significant-Gravitas/AutoGPT,dimp170_sonar-analysis-dataset:snippet_12.py,"import hashlib
+import secrets
+from typing import NamedTuple
+
+
+class APIKeyContainer(NamedTuple):
+    
+
+    raw: str
+    prefix: str
+    postfix: str
+    hash: str
+
+
+class APIKeyManager:
+    PREFIX: st...",py
+Significant-Gravitas/AutoGPT,dimp170_sonar-analysis-dataset:snippet_13.py,"from .config import Settings
+from .depends import requires_admin_user, requires_user
+from .jwt_utils import parse_jwt_token
+from .middleware import auth_middleware
+from .models import User
+
+__all__ = ...",py
+AUTOMATIC1111/stable-diffusion-webui,dimp170_sonar-analysis-dataset:snippet_15.py,"import os
+import gc
+import time
+
+import numpy as np
+import torch
+import torchvision
+from PIL import Image
+from einops import rearrange, repeat
+from omegaconf import OmegaConf
+import safetensors.torch
+...",py
+AUTOMATIC1111/stable-diffusion-webui,dimp170_sonar-analysis-dataset:snippet_16.py,"import os
+from modules import paths
+
+
+def preload(parser):
+    parser.add_argument(""--ldsr-models-path"", type=str, help=""Path to directory with LDSR model file(s)."", default=os.path.join(paths.mo...",py
+AUTOMATIC1111/stable-diffusion-webui,dimp170_sonar-analysis-dataset:snippet_17.py,"import os
+
+from modules.modelloader import load_file_from_url
+from modules.upscaler import Upscaler, UpscalerData
+from ldsr_model_arch import LDSR
+from modules import shared, script_callbacks, errors
+...",py
+AUTOMATIC1111/stable-diffusion-webui,dimp170_sonar-analysis-dataset:snippet_18.py,"import numpy as np
+import torch
+import pytorch_lightning as pl
+import torch.nn.functional as F
+from contextlib import contextmanager
+
+from torch.optim.lr_scheduler import LambdaLR
+
+from ldm.modules.em...",py
+huggingface/transformers,dimp170_sonar-analysis-dataset:snippet_19.py,"import argparse
+import copy
+import os
+import random
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional
+import glob
+import yaml
+
+
+COMMON_ENV_VARIABLES = {
+    ""OMP_NUM_THREA...",py
+huggingface/transformers,dimp170_sonar-analysis-dataset:snippet_20.py,"import re
+import argparse
+
+def parse_pytest_output(file_path):
+    skipped_tests = {}
+    skipped_count = 0
+    with open(file_path, 'r') as file:
+        for line in file:
+            match = re.matc...",py
+huggingface/transformers,dimp170_sonar-analysis-dataset:snippet_21.py,"import argparse
+import glob
+import json
+import os.path
+import re
+import tempfile
+from contextlib import contextmanager
+from pathlib import Path
+
+from git import Repo
+
+from huggingface_hub import HfApi...",py
+huggingface/transformers,dimp170_sonar-analysis-dataset:snippet_22.py,"import argparse
+import importlib.util
+import logging
+import os
+from typing import Dict
+import psycopg2
+import sys
+
+from psycopg2.extras import Json
+from psycopg2.extensions import register_adapter
+
+
+r...",py
+ytdl-org/youtube-dl,dimp170_sonar-analysis-dataset:snippet_23.py,,py
+ytdl-org/youtube-dl,dimp170_sonar-analysis-dataset:snippet_24.py,"from __future__ import unicode_literals
+
+import os
+from os.path import dirname as dirn
+import sys
+
+sys.path.insert(0, dirn(dirn(os.path.abspath(__file__))))
+
+import youtube_dl
+from youtube_dl.compat i...",py
+ytdl-org/youtube-dl,dimp170_sonar-analysis-dataset:snippet_25.py,"import argparse
+import ctypes
+import functools
+import shutil
+import subprocess
+import sys
+import tempfile
+import threading
+import traceback
+import os.path
+
+sys.path.insert(0, os.path.dirname(os.path.d...",py
+ytdl-org/youtube-dl,dimp170_sonar-analysis-dataset:snippet_26.py,"from __future__ import unicode_literals
+
+
+
+
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from test.helper import gettestcases
+from youtube_dl.u...",py
+ytdl-org/youtube-dl,dimp170_sonar-analysis-dataset:snippet_27.py,"from __future__ import unicode_literals
+
+
+
+
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import youtube_dl
+from types import MethodType
+
+
+def c...",py
+yt-dlp/yt-dlp,dimp170_sonar-analysis-dataset:snippet_28.py,"import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import platform
+
+from PyInstaller.__main__ import run as run_pyinstaller
+
+from devscripts.utils i...",py
+yt-dlp/yt-dlp,dimp170_sonar-analysis-dataset:snippet_29.py,"import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+import yt_dlp
+
+BASH_COMPLETION_FILE = 'completions/bash/yt-dlp'
+BASH_COMPLETION_TEMPLATE = 'devs...",py
+yt-dlp/yt-dlp,dimp170_sonar-analysis-dataset:snippet_30.py,"import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+import urllib.parse
+import urllib.request
+
+from test.helper import gettestcases
+
+if len(sys.argv...",py
+521xueweihan/HelloGitHub,dimp170_sonar-analysis-dataset:snippet_31.py,"import os
+import logging
+import smtplib
+import datetime
+from operator import itemgetter
+from email.mime.text import MIMEText
+from email.header import Header
+
+import requests
+
+logging.basicConfig(
+    ...",py
+521xueweihan/HelloGitHub,dimp170_sonar-analysis-dataset:snippet_32.py,"from __future__ import print_function
+import sys
+import os
+
+CONTENT_FLAG = '{{ hello_github_content }}'
+NUM_FLAG = '{{ hello_github_num }}'
+
+
+class InputError(Exception):
+    def __init__(self, messag...",py
+nvbn/thefuck,dimp170_sonar-analysis-dataset:snippet_33.py,"from setuptools.command import easy_install
+import re
+TEMPLATE = r
+
+
+@classmethod
+def get_args(cls, dist, header=None):
+    
+    if header is None:
+        header = cls.get_header()
+    spec = str(dis...",py
+nvbn/thefuck,dimp170_sonar-analysis-dataset:snippet_34.py,"from subprocess import call
+import os
+import re
+
+
+version = None
+
+
+def get_new_setup_py_lines():
+    global version
+    with open('setup.py', 'r') as sf:
+        current_setup = sf.readlines()
+    for...",py
+nvbn/thefuck,dimp170_sonar-analysis-dataset:snippet_35.py,"from setuptools import setup, find_packages
+import pkg_resources
+import sys
+import os
+import fastentrypoints
+
+
+try:
+    if int(pkg_resources.get_distribution(""pip"").version.split('.')[0]) < 6:
+       ...",py
+nvbn/thefuck,dimp170_sonar-analysis-dataset:snippet_36.py,"import os
+import pytest
+from thefuck import shells
+from thefuck import conf, const
+from thefuck.system import Path
+
+shells.shell = shells.Generic()
+
+
+def pytest_configure(config):
+    config.addinival...",py
+pytorch/pytorch,dimp170_sonar-analysis-dataset:snippet_37.py,"import os
+import shutil
+from subprocess import check_call, check_output
+
+
+def list_dir(path: str) -> list[str]:
+    
+    return check_output([""ls"", ""-1"", path]).decode().split(""\n"")
+
+
+def build_ArmCom...",py
+pytorch/pytorch,dimp170_sonar-analysis-dataset:snippet_38.py,"import os
+import subprocess
+import sys
+import time
+from typing import Optional, Union
+
+import boto3
+
+
+
+os_amis = {
+    ""ubuntu18_04"": ""ami-078eece1d8119409f"",  
+    ""ubuntu20_04"": ""ami-052eac90edaa9d0...",py
+pytorch/pytorch,dimp170_sonar-analysis-dataset:snippet_39.py,"import os
+import shutil
+import sys
+from subprocess import check_call
+from tempfile import TemporaryDirectory
+
+from auditwheel.elfutils import elf_file_filter
+from auditwheel.lddtree import lddtree
+fro...",py
+pytorch/pytorch,dimp170_sonar-analysis-dataset:snippet_40.py,"def is_manylinux1_compatible():
+    
+    from distutils.util import get_platform
+
+    if get_platform() not in [""linux-x86_64"", ""linux-i686"", ""linux-s390x""]:
+        return False
+
+    
+    try:
+      ...",py
+pytorch/pytorch,dimp170_sonar-analysis-dataset:snippet_41.py,"import sys
+from urllib.request import urlopen
+
+
+GOOD_SSL = ""https://google.com""
+BAD_SSL = ""https://self-signed.badssl.com""
+
+
+print(""Testing SSL certificate checking for Python:"", sys.version)
+
+if sys....",py
+deepseek-ai/DeepSeek-V3,dimp170_sonar-analysis-dataset:snippet_42.py,"import os
+import shutil
+from argparse import ArgumentParser
+from glob import glob
+from tqdm import tqdm, trange
+
+import torch
+from safetensors.torch import safe_open, save_file
+
+
+mapping = {
+    ""embe...",py
+deepseek-ai/DeepSeek-V3,dimp170_sonar-analysis-dataset:snippet_43.py,"import os
+import json
+from argparse import ArgumentParser
+from glob import glob
+from tqdm import tqdm
+
+import torch
+from safetensors.torch import load_file, save_file
+
+from kernel import weight_dequan...",py
+deepseek-ai/DeepSeek-V3,dimp170_sonar-analysis-dataset:snippet_44.py,"import os
+import json
+from argparse import ArgumentParser
+from typing import List
+
+import torch
+import torch.distributed as dist
+from transformers import AutoTokenizer
+from safetensors.torch import lo...",py
+deepseek-ai/DeepSeek-V3,dimp170_sonar-analysis-dataset:snippet_45.py,"from typing import Tuple
+
+import torch
+import triton
+import triton.language as tl
+from triton import Config
+
+
+@triton.jit
+def act_quant_kernel(x_ptr, y_ptr, s_ptr, BLOCK_SIZE: tl.constexpr):
+    
+    ...",py
+deepseek-ai/DeepSeek-V3,dimp170_sonar-analysis-dataset:snippet_46.py,"import math
+from dataclasses import dataclass
+from typing import Tuple, Optional, Literal
+
+import torch
+from torch import nn
+import torch.nn.functional as F
+import torch.distributed as dist
+
+from kern...",py
+django/django,dimp170_sonar-analysis-dataset:snippet_48.py,"from django.utils.version import get_version
+
+VERSION = (6, 0, 0, ""alpha"", 0)
+
+__version__ = get_version(VERSION)
+
+
+def setup(set_prefix=True):
+    
+    from django.apps import apps
+    from django.co...",py
+django/django,dimp170_sonar-analysis-dataset:snippet_49.py,"from django.core import management
+
+if __name__ == ""__main__"":
+    management.execute_from_command_line()",py
+django/django,dimp170_sonar-analysis-dataset:snippet_50.py,"from .config import AppConfig
+from .registry import apps
+
+__all__ = [""AppConfig"", ""apps""]",py
+django/django,dimp170_sonar-analysis-dataset:snippet_51.py,"import inspect
+import os
+from importlib import import_module
+
+from django.core.exceptions import ImproperlyConfigured
+from django.utils.functional import cached_property
+from django.utils.module_loadi...",py
+fastapi/fastapi,dimp170_sonar-analysis-dataset:snippet_54.py,"from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
+
+
+class Item(BaseModel):
+    id: str
+    value: str
+
+
+class Message(BaseModel):
+    message: str
+
+...",py
+fastapi/fastapi,dimp170_sonar-analysis-dataset:snippet_55.py,"from typing import Union
+
+from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+
+
+class Item(BaseModel):
+    id: str
+    value: str
+
+
+app = FastAPI()
+
+
+...",py
+fastapi/fastapi,dimp170_sonar-analysis-dataset:snippet_56.py,"from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
+
+
+class Item(BaseModel):
+    id: str
+    value: str
+
+
+class Message(BaseModel):
+    message: str
+
+...",py
+tensorflow/models,dimp170_sonar-analysis-dataset:snippet_57.py,,py
+tensorflow/models,dimp170_sonar-analysis-dataset:snippet_58.py,,py
+tensorflow/models,dimp170_sonar-analysis-dataset:snippet_59.py,"import functools
+from typing import Any, Callable, Type, Union
+
+import tensorflow as tf, tf_keras
+
+PossibleDatasetType = Union[Type[tf.data.Dataset], Callable[[tf.Tensor], Any]]
+
+
+def pick_dataset_fn(...",py
+tensorflow/models,dimp170_sonar-analysis-dataset:snippet_60.py,"import json
+import os
+import tensorflow as tf, tf_keras
+
+
+def _collective_communication(all_reduce_alg):
+  
+  collective_communication_options = {
+      None: tf.distribute.experimental.CollectiveComm...",py
+tensorflow/models,dimp170_sonar-analysis-dataset:snippet_61.py,"import sys
+import tensorflow as tf, tf_keras
+
+from official.common import distribute_utils
+
+TPU_TEST = 'test_tpu' in sys.argv[0]
+
+
+class DistributeUtilsTest(tf.test.TestCase):
+  
+
+  def test_invalid_a...",py
+home-assistant/core,dimp170_sonar-analysis-dataset:snippet_62.py,,py
+home-assistant/core,dimp170_sonar-analysis-dataset:snippet_63.py,"from __future__ import annotations
+
+import argparse
+from contextlib import suppress
+import faulthandler
+import os
+import sys
+import threading
+
+from .backup_restore import restore_backup
+from .const im...",py
+home-assistant/core,dimp170_sonar-analysis-dataset:snippet_64.py,"from __future__ import annotations
+
+import asyncio
+from collections import OrderedDict
+from collections.abc import Mapping
+from datetime import datetime, timedelta
+from functools import partial
+import...",py
+home-assistant/core,dimp170_sonar-analysis-dataset:snippet_65.py,"from __future__ import annotations
+
+from datetime import timedelta
+import hmac
+import itertools
+from logging import getLogger
+from typing import Any
+
+from homeassistant.core import HomeAssistant, call...",py
+home-assistant/core,dimp170_sonar-analysis-dataset:snippet_66.py,"from datetime import timedelta
+
+ACCESS_TOKEN_EXPIRATION = timedelta(minutes=30)
+MFA_SESSION_EXPIRATION = timedelta(minutes=5)
+REFRESH_TOKEN_EXPIRATION = timedelta(days=90).total_seconds()
+
+GROUP_ID_AD...",py
+openai/whisper,dimp170_sonar-analysis-dataset:snippet_67.py,"import random as rand
+
+import numpy
+import pytest
+
+
+def pytest_configure(config):
+    config.addinivalue_line(""markers"", ""requires_cuda"")
+
+
+@pytest.fixture
+def random():
+    rand.seed(42)
+    numpy.ra...",py
+openai/whisper,dimp170_sonar-analysis-dataset:snippet_68.py,"import os.path
+
+import numpy as np
+
+from whisper.audio import SAMPLE_RATE, load_audio, log_mel_spectrogram
+
+
+def test_audio():
+    audio_path = os.path.join(os.path.dirname(__file__), ""jfk.flac"")
+    ...",py
+openai/whisper,dimp170_sonar-analysis-dataset:snippet_69.py,"import pytest
+
+from whisper.normalizers import EnglishTextNormalizer
+from whisper.normalizers.english import (
+    EnglishNumberNormalizer,
+    EnglishSpellingNormalizer,
+)
+
+
+@pytest.mark.parametrize(...",py
+openai/whisper,dimp170_sonar-analysis-dataset:snippet_70.py,"import numpy as np
+import pytest
+import scipy.ndimage
+import torch
+
+from whisper.timing import dtw_cpu, dtw_cuda, median_filter
+
+sizes = [
+    (10, 20),
+    (32, 16),
+    (123, 1500),
+    (234, 189),
+...",py
+openai/whisper,dimp170_sonar-analysis-dataset:snippet_71.py,"import pytest
+
+from whisper.tokenizer import get_tokenizer
+
+
+@pytest.mark.parametrize(""multilingual"", [True, False])
+def test_tokenizer(multilingual):
+    tokenizer = get_tokenizer(multilingual=False)...",py
+3b1b/manim,dimp170_sonar-analysis-dataset:snippet_72.py,"from manimlib import *
+
+class SquareToCircle(Scene):
+    def construct(self):
+        circle = Circle()
+        circle.set_fill(BLUE, opacity=0.5)
+        circle.set_stroke(BLUE_E, width=4)
+        sq...",py
+3b1b/manim,dimp170_sonar-analysis-dataset:snippet_73.py,"import os
+import sys
+sys.path.insert(0, os.path.abspath("".""))
+sys.path.insert(0, os.path.abspath('../../'))
+
+
+project = 'manim'
+copyright = '- This document has been placed in the public domain.'
+auth...",py
+3b1b/manim,dimp170_sonar-analysis-dataset:snippet_74.py,"from docutils import nodes
+from docutils.parsers.rst import directives, Directive
+
+import jinja2
+import os
+
+
+class skip_manim_node(nodes.Admonition, nodes.Element):
+    pass
+
+
+def visit(self, node, na...",py
+3b1b/manim,dimp170_sonar-analysis-dataset:snippet_75.py,"from manimlib import *
+import numpy as np
+
+
+
+
+
+
+
+
+
+class OpeningManimExample(Scene):
+    def construct(self):
+        intro_words = Text()
+        intro_words.to_edge(UP)
+
+        self.play(Write(intr...",py
+3b1b/manim,dimp170_sonar-analysis-dataset:snippet_76.py,"from manimlib.imports import *
+
+NEW_BLUE = ""
+
+class Thumbnail(GraphScene):
+    CONFIG = {
+        ""y_max"": 8,
+        ""y_axis_height"": 5,
+    }
+
+    def construct(self):
+        self.show_function_gra...",py
+fighting41love/funNLP,dimp170_sonar-analysis-dataset:snippet_77.py,"f = open('30wChinsesSeqDic.txt')
+fout = open('30wdict.txt','a')
+count = 0
+for line in f:
+	temp = line.strip()
+	temp_list = temp.split(' ')
+	temp_sublist = temp_list[1].split('\t')
+	if len(temp_...",py
+pallets/flask,dimp170_sonar-analysis-dataset:snippet_78.py,"import packaging.version
+from pallets_sphinx_themes import get_version
+from pallets_sphinx_themes import ProjectLink
+
+
+
+project = ""Flask""
+copyright = ""2010 Pallets""
+author = ""Pallets""
+release, version...",py
+pallets/flask,dimp170_sonar-analysis-dataset:snippet_79.py,"from task_app import create_app
+
+flask_app = create_app()
+celery_app = flask_app.extensions[""celery""]",py
+pallets/flask,dimp170_sonar-analysis-dataset:snippet_80.py,"from celery import Celery
+from celery import Task
+from flask import Flask
+from flask import render_template
+
+
+def create_app() -> Flask:
+    app = Flask(__name__)
+    app.config.from_mapping(
+        ...",py
+pallets/flask,dimp170_sonar-analysis-dataset:snippet_81.py,"import time
+
+from celery import shared_task
+from celery import Task
+
+
+@shared_task(ignore_result=False)
+def add(a: int, b: int) -> int:
+    return a + b
+
+
+@shared_task()
+def block() -> None:
+    time....",py
+pallets/flask,dimp170_sonar-analysis-dataset:snippet_82.py,"from celery.result import AsyncResult
+from flask import Blueprint
+from flask import request
+
+from . import tasks
+
+bp = Blueprint(""tasks"", __name__, url_prefix=""/tasks"")
+
+
+@bp.get(""/result/<id>"")
+def r...",py
+abi/screenshot-to-code,dimp170_sonar-analysis-dataset:snippet_83.py,"import unittest
+from codegen.utils import extract_html_content
+
+
+class TestUtils(unittest.TestCase):
+
+    def test_extract_html_content_with_html_tags(self):
+        text = ""<html><body><p>Hello, Worl...",py
+abi/screenshot-to-code,dimp170_sonar-analysis-dataset:snippet_84.py,"import re
+
+
+def extract_html_content(text: str):
+    
+    match = re.search(r""(<html.*?>.*?</html>)"", text, re.DOTALL)
+    if match:
+        return match.group(1)
+    else:
+        
+        print(
+   ...",py
+abi/screenshot-to-code,dimp170_sonar-analysis-dataset:snippet_85.py,"import os
+
+NUM_VARIANTS = 2
+
+
+OPENAI_API_KEY = os.environ.get(""OPENAI_API_KEY"", None)
+ANTHROPIC_API_KEY = os.environ.get(""ANTHROPIC_API_KEY"", None)
+GEMINI_API_KEY = os.environ.get(""GEMINI_API_KEY"", No...",py
+abi/screenshot-to-code,dimp170_sonar-analysis-dataset:snippet_86.py,"from typing import Literal
+
+
+InputMode = Literal[
+    ""image"",
+    ""video"",
+]",py
+bregman-arie/devops-exercises,dimp170_sonar-analysis-dataset:snippet_87.py,"import random
+from typing import List
+
+
+def binary_search(arr: List[int], lb: int, ub: int, target: int) -> int:
+    
+    if lb <= ub:
+        mid: int = lb + (ub - lb) // 2
+        if arr[mid] == tar...",py
+bregman-arie/devops-exercises,dimp170_sonar-analysis-dataset:snippet_88.py,"import boto3
+import json
+
+def lambda_handler(event, context):
+
+  
+  print(event)
+
+  
+  bucket_name=event['Records'][0]['s3']['bucket']['name']
+  object_key=event['Records'][0]['s3']['object']['key']
+
+...",py
+bregman-arie/devops-exercises,dimp170_sonar-analysis-dataset:snippet_89.py,"import pathlib
+from random import choice
+from typing import List
+import re
+
+p = pathlib.Path(__file__).parent.parent.joinpath(""README.md"")
+
+
+def get_file_list():
+    file_list = """"
+    with open(p, ""r...",py
+bregman-arie/devops-exercises,dimp170_sonar-analysis-dataset:snippet_90.py,"import random
+import optparse
+import os
+
+
+def main():
+    
+    parser = optparse.OptionParser()
+    parser.add_option(""-s"", ""--skip"", action=""store_true"",
+                      help=""skips questions w...",py
+bregman-arie/devops-exercises,dimp170_sonar-analysis-dataset:snippet_91.py,"import pathlib
+from scripts.question_utils import get_question_list, get_challenges_count
+
+LINE_FLAG = b"":bar_chart:""
+
+p = pathlib.Path(__file__).parent.parent.joinpath('README.md')
+
+
+with open(p, 'rb...",py
+binary-husky/gpt_academic,dimp170_sonar-analysis-dataset:snippet_92.py,"from loguru import logger
+
+def check_proxy(proxies, return_ip=False):
+    
+    import requests
+    proxies_https = proxies['https'] if proxies is not None else '无'
+    ip = None
+    try:
+        respo...",py
+binary-husky/gpt_academic,dimp170_sonar-analysis-dataset:snippet_94.py,"import importlib
+from toolbox import clear_line_break
+from toolbox import apply_gpt_academic_string_mask_langbased
+from toolbox import build_gpt_academic_masked_string_langbased
+from textwrap import d...",py
+binary-husky/gpt_academic,dimp170_sonar-analysis-dataset:snippet_95.py,"from toolbox import HotReload  
+from toolbox import trimmed_format_exc
+from loguru import logger
+
+def get_crazy_functions():
+    from crazy_functions.读文章写摘要 import 读文章写摘要
+    from crazy_functions.生成函数...",py
+binary-husky/gpt_academic,dimp170_sonar-analysis-dataset:snippet_96.py,"from toolbox import CatchException, update_ui, promote_file_to_downloadzone, get_log_folder, get_user
+from crazy_functions.plugin_template.plugin_class_template import GptAcademicPluginTemplate, ArgPr...",py
+comfyanonymous/ComfyUI,dimp170_sonar-analysis-dataset:snippet_97.py,"import pygit2
+from datetime import datetime
+import sys
+import os
+import shutil
+import filecmp
+
+def pull(repo, remote_name='origin', branch='master'):
+    for remote in repo.remotes:
+        i...",py
+comfyanonymous/ComfyUI,dimp170_sonar-analysis-dataset:snippet_98.py,"from aiohttp import web
+from typing import Optional
+from folder_paths import folder_names_and_paths
+from api_server.services.terminal_service import TerminalService
+import app.logger
+
+class InternalRo...",py
+josephmisiti/awesome-machine-learning,dimp170_sonar-analysis-dataset:snippet_99.py,"from pyquery import PyQuery as pq
+import urllib
+import codecs
+import random
+
+text_file = codecs.open(""Packages.txt"", encoding='utf-8', mode=""w"")
+d = pq(url='http://cran.r-project.org/web/views/Machine...",py
+d2l-ai/d2l-zh,dimp170_sonar-analysis-dataset:snippet_100.py,"import os
+import sys
+
+if len(sys.argv) > 1:
+	framework_name = sys.argv[1]
+else:
+	
+	
+	framework_name = None
+
+print(""*""*10, ""D2L Framework Version Details"", ""*""*10)
+
+if framework_name:
+	
+	print(""nvcc --...",py
+d2l-ai/d2l-zh,dimp170_sonar-analysis-dataset:snippet_101.py,"import argparse
+import random
+import os
+import re
+import sys
+import time
+from datetime import datetime
+
+import boto3
+from botocore.compat import total_seconds
+from botocore.config import Config
+
+
+job_...",py
+d2l-ai/d2l-zh,dimp170_sonar-analysis-dataset:snippet_102.py,"from . import text
+from .utils import *
+
+__version__ = '1.0.0'",py
+d2l-ai/d2l-zh,dimp170_sonar-analysis-dataset:snippet_103.py,"from . import vocab
+from . import embedding",py
+d2l-ai/d2l-zh,dimp170_sonar-analysis-dataset:snippet_104.py,"import os
+from mxnet import nd, gluon
+import tarfile
+import zipfile
+
+DATA_URL = 'http://d2l-data.s3-accelerate.amazonaws.com/'
+PRETRAINED_FILE = {
+    'glove':{},
+    'fasttext':{}
+}
+PRETRAINED_FILE['...",py
+python/cpython,dimp170_sonar-analysis-dataset:snippet_105.py,"import asyncio
+import argparse
+from glob import glob
+import os
+import re
+import shlex
+import shutil
+import signal
+import subprocess
+import sys
+import sysconfig
+from asyncio import wait_for
+from contex...",py
+python/cpython,dimp170_sonar-analysis-dataset:snippet_106.py,"import os
+import runpy
+import shlex
+import signal
+import sys
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+signal.pthread_sigmask(signal.SIG_UNBLOCK, [signal.SIGUSR1])
+
+sys.argv[1:] = shlex.split(os.environ[""PYTHON_ARGS""])
+
+
+...",py
+python/cpython,dimp170_sonar-analysis-dataset:snippet_107.py,"import importlib
+import os
+import sys
+
+
+sys.path.append(os.path.abspath('tools/extensions'))
+sys.path.append(os.path.abspath('includes'))
+
+
+from pyspecific import SOURCE_URI
+
+
+
+
+
+extensions = [
+    'a...",py
+python/cpython,dimp170_sonar-analysis-dataset:snippet_108.py,"import pickle
+import sqlite3
+from collections import namedtuple
+
+
+MemoRecord = namedtuple(""MemoRecord"", ""key, task"")
+
+class DBPickler(pickle.Pickler):
+
+    def persistent_id(self, obj):
+        
+     ...",py
+python/cpython,dimp170_sonar-analysis-dataset:snippet_109.py,"import sys, os, difflib, argparse
+from datetime import datetime, timezone
+
+def file_mtime(path):
+    t = datetime.fromtimestamp(os.stat(path).st_mtime,
+                               timezone.utc)
+   ...",py
+ansible/ansible,dimp170_sonar-analysis-dataset:snippet_110.py,"from __future__ import annotations
+
+import os
+import re
+import shutil
+import sys
+
+
+def main():
+    
+    source_directory = sys.argv[1]
+
+    if '/ansible_collections/' in os.getcwd():
+        output_pa...",py
+ansible/ansible,dimp170_sonar-analysis-dataset:snippet_111.py,"from __future__ import annotations
+
+import argparse
+import dataclasses
+import pathlib
+import shutil
+import subprocess
+import tempfile
+import typing as t
+import urllib.request
+
+
+@dataclasses.dataclass(...",py
+ansible/ansible,dimp170_sonar-analysis-dataset:snippet_112.py,"from __future__ import annotations
+
+import sys
+import time
+
+
+def main():
+    
+    start = time.time()
+
+    sys.stdin.reconfigure(errors='surrogateescape')
+    sys.stdout.reconfigure(errors='surrogatee...",py
+ansible/ansible,dimp170_sonar-analysis-dataset:snippet_113.py,"from __future__ import annotations
+
+import cProfile
+import sys
+import traceback
+
+from ansible.module_utils.common.text.converters import to_text
+
+target = sys.argv.pop(1)
+myclass = ""%sCLI"" % target.ca...",py
+ansible/ansible,dimp170_sonar-analysis-dataset:snippet_114.py,"from __future__ import annotations
+
+
+import argparse
+import json
+import os
+import re
+import io
+import zipfile
+
+import requests
+
+try:
+    import argcomplete
+except ImportError:
+    argcomplete = None
+
+...",py
+xtekky/gpt4free,dimp170_sonar-analysis-dataset:snippet_115.py,"import requests
+import json
+import uuid
+
+url = ""http://localhost:1337/v1/chat/completions""
+conversation_id = str(uuid.uuid4())
+body = {
+    ""model"": """",
+    ""provider"": ""Copilot"", 
+    ""stream"": True,...",py
+xtekky/gpt4free,dimp170_sonar-analysis-dataset:snippet_116.py,"import requests
+url = ""http://localhost:1337/v1/images/generations""
+body = {
+    ""model"": ""flux"",
+    ""prompt"": ""hello world user"",
+    ""response_format"": None,
+    
+    
+}
+data = requests.post(url, j...",py
+xtekky/gpt4free,dimp170_sonar-analysis-dataset:snippet_117.py,"from g4f.client import Client
+
+class ConversationHandler:
+    def __init__(self, model=""gpt-4""):
+        self.client = Client()
+        self.model = model
+        self.conversation_history = []
+      ...",py
+xtekky/gpt4free,dimp170_sonar-analysis-dataset:snippet_118.py,"import asyncio
+from g4f.client import AsyncClient
+
+async def main():
+    client = AsyncClient()
+    
+    stream = client.chat.completions.create(
+        model=""gpt-4"",
+        messages=[{""role"": ""use...",py
+xtekky/gpt4free,dimp170_sonar-analysis-dataset:snippet_119.py,"from g4f.client   import Client
+from g4f.Provider import OpenaiChat, RetryProvider
+
+
+client = Client(
+    proxies = {
+        'http': 'http://username:password@host:port', 
+        'https': 'http://us...",py
+swisskyrepo/PayloadsAllTheThings,dimp170_sonar-analysis-dataset:snippet_120.py,"from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import input
+from builtins import str
+import urllib.request, urllib.error, ur...",py
+swisskyrepo/PayloadsAllTheThings,dimp170_sonar-analysis-dataset:snippet_121.py,"from __future__ import print_function
+from builtins import str
+import argparse
+import requests
+import sys
+
+
+try:
+    import requests.packages.urllib3
+    requests.packages.urllib3.disable_warnings()
+e...",py
+swisskyrepo/PayloadsAllTheThings,dimp170_sonar-analysis-dataset:snippet_122.py,"from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
+from builtins import range
+import argparse
+import random
+import re...",py
+swisskyrepo/PayloadsAllTheThings,dimp170_sonar-analysis-dataset:snippet_123.py,"import requests
+import string
+import random
+import re
+import sys
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarni...",py
+swisskyrepo/PayloadsAllTheThings,dimp170_sonar-analysis-dataset:snippet_124.py,"from __future__ import print_function
+import requests
+import logging
+import json
+import urllib.parse
+
+
+
+
+
+
+name          = ""docker""
+description   = ""Docker RCE via Open Docker API on port 2375""
+author...",py
+keras-team/keras,dimp170_sonar-analysis-dataset:snippet_127.py,"import importlib
+import os
+import re
+import shutil
+
+import namex
+
+PACKAGE = ""keras""
+BUILD_DIR_NAME = ""tmp_build_dir""
+
+
+def ignore_files(_, filenames):
+    return [f for f in filenames if f.endswith(""_...",py
+sherlock-project/sherlock,dimp170_sonar-analysis-dataset:snippet_128.py,"import json
+import os
+
+
+DATA_REL_URI: str = ""sherlock_project/resources/data.json""
+
+
+with open(DATA_REL_URI, ""r"", encoding=""utf-8"") as data_file:
+    data: dict = json.load(data_file)
+
+
+social_network...",py
+sherlock-project/sherlock,dimp170_sonar-analysis-dataset:snippet_129.py,"import_error_test_var = None
+
+__shortname__   = ""Sherlock""
+__longname__    = ""Sherlock: Find Usernames Across Social Networks""
+__version__     = ""0.15.0""
+
+forge_api_latest_release = ""https://api.githu...",py
+sherlock-project/sherlock,dimp170_sonar-analysis-dataset:snippet_130.py,"import sys
+
+
+if __name__ == ""__main__"":
+    
+    python_version = sys.version.split()[0]
+
+    if sys.version_info < (3, 9):
+        print(f""Sherlock requires Python 3.9+\nYou are using Python {python_...",py
+sherlock-project/sherlock,dimp170_sonar-analysis-dataset:snippet_131.py,"from sherlock_project.result import QueryStatus
+from colorama import Fore, Style
+import webbrowser
+
+
+globvar = 0
+
+
+class QueryNotify:
+    
+
+    def __init__(self, result=None):
+        
+
+        self....",py
+sherlock-project/sherlock,dimp170_sonar-analysis-dataset:snippet_132.py,"from enum import Enum
+
+
+class QueryStatus(Enum):
+    
+    CLAIMED   = ""Claimed""   
+    AVAILABLE = ""Available"" 
+    UNKNOWN   = ""Unknown""   
+    ILLEGAL   = ""Illegal""   
+    WAF       = ""WAF""       
+
+...",py
+scikit-learn/scikit-learn,dimp170_sonar-analysis-dataset:snippet_133.py,"import json
+import os
+import re
+
+from github import Github
+
+context_dict = json.loads(os.getenv(""CONTEXT_GITHUB""))
+
+repo = context_dict[""repository""]
+g = Github(context_dict[""token""])
+repo = g.get_rep...",py
+scikit-learn/scikit-learn,dimp170_sonar-analysis-dataset:snippet_134.py,"import shutil
+import sys
+
+import click
+from spin.cmds import util
+
+
+@click.command()
+def clean():
+    
+    util.run([sys.executable, ""-m"", ""pip"", ""uninstall"", ""scikit-learn"", ""-y""])
+    default_meson_...",py
+scikit-learn/scikit-learn,dimp170_sonar-analysis-dataset:snippet_135.py,,py
+scikit-learn/scikit-learn,dimp170_sonar-analysis-dataset:snippet_136.py,"from sklearn.cluster import KMeans, MiniBatchKMeans
+
+from .common import Benchmark, Estimator, Predictor, Transformer
+from .datasets import _20newsgroups_highdim_dataset, _blobs_dataset
+from .utils im...",py
+scikit-learn/scikit-learn,dimp170_sonar-analysis-dataset:snippet_137.py,"import itertools
+import json
+import os
+import pickle
+import timeit
+from abc import ABC, abstractmethod
+from multiprocessing import cpu_count
+from pathlib import Path
+
+import numpy as np
+
+
+def get_from...",py
+Alvin9999/new-pac,dimp170_sonar-analysis-dataset:snippet_138.py,"import re
+import os
+from datetime import datetime
+import pytz
+import base64
+import json
+
+
+wiki_file = os.path.join(""wiki"", ""v2ray免费账号.md"")  
+
+
+shanghai_tz = pytz.timezone(""Asia/Shanghai"")
+current_time...",py
+Alvin9999/new-pac,dimp170_sonar-analysis-dataset:snippet_139.py,"import re
+import os
+from datetime import datetime
+import pytz  
+
+
+wiki_file = os.path.join(""wiki"", ""直翻通道.md"")  
+readme_file = os.path.join(""README.md"")  
+
+
+shanghai_tz = pytz.timezone(""Asia/Shanghai"")...",py
+labmlai/annotated_deep_learning_paper_implementations,dimp170_sonar-analysis-dataset:snippet_144.py,,py
+OpenInterpreter/open-interpreter,dimp170_sonar-analysis-dataset:snippet_145.py,"from interpreter import interpreter
+
+interpreter.chat()",py
+OpenInterpreter/open-interpreter,dimp170_sonar-analysis-dataset:snippet_146.py,"import sys
+
+if ""--os"" in sys.argv:
+    from rich import print as rich_print
+    from rich.markdown import Markdown
+    from rich.rule import Rule
+
+    def print_markdown(message):
+        
+
+        fo...",py
+OpenInterpreter/open-interpreter,dimp170_sonar-analysis-dataset:snippet_147.py,"import asyncio
+import json
+import os
+import platform
+import time
+import traceback
+import uuid
+from collections.abc import Callable
+from datetime import datetime
+
+try:
+    from enum import StrEnum
+exce...",py
+OpenInterpreter/open-interpreter,dimp170_sonar-analysis-dataset:snippet_148.py,"from .base import CLIResult, ToolResult
+from .bash import BashTool
+from .collection import ToolCollection
+from .computer import ComputerTool
+from .edit import EditTool
+
+__ALL__ = [
+    BashTool,
+    C...",py
+localstack/localstack,dimp170_sonar-analysis-dataset:snippet_149.py,"import base64
+import binascii
+import logging
+import re
+
+from localstack import config
+from localstack.constants import DEFAULT_AWS_ACCOUNT_ID
+
+LOG = logging.getLogger(__name__)
+
+
+
+ACCOUNT_OFFSET = 549...",py
+localstack/localstack,dimp170_sonar-analysis-dataset:snippet_150.py,"from .core import (
+    CommonServiceException,
+    RequestContext,
+    ServiceException,
+    ServiceRequest,
+    ServiceResponse,
+    handler,
+)
+
+__all__ = [
+    ""RequestContext"",
+    ""ServiceExcepti...",py
+localstack/localstack,dimp170_sonar-analysis-dataset:snippet_151.py,"from datetime import datetime
+from enum import StrEnum
+from typing import List, Optional, TypedDict
+
+from localstack.aws.api import RequestContext, ServiceException, ServiceRequest, handler
+
+Arn = str...",py
+localstack/localstack,dimp170_sonar-analysis-dataset:snippet_152.py,"from datetime import datetime
+from enum import StrEnum
+from typing import IO, Dict, Iterable, List, Optional, TypedDict, Union
+
+from localstack.aws.api import RequestContext, ServiceException, Service...",py
+meta-llama/llama,dimp170_sonar-analysis-dataset:snippet_153.py,"from typing import List, Optional
+
+import fire
+
+from llama import Llama, Dialog
+
+
+def main(
+    ckpt_dir: str,
+    tokenizer_path: str,
+    temperature: float = 0.6,
+    top_p: float = 0.9,
+    max_se...",py
+meta-llama/llama,dimp170_sonar-analysis-dataset:snippet_154.py,"import fire
+
+from llama import Llama
+from typing import List
+
+def main(
+    ckpt_dir: str,
+    tokenizer_path: str,
+    temperature: float = 0.6,
+    top_p: float = 0.9,
+    max_seq_len: int = 128,
+  ...",py
+meta-llama/llama,dimp170_sonar-analysis-dataset:snippet_155.py,"from .generation import Llama, Dialog
+from .model import ModelArgs, Transformer
+from .tokenizer import Tokenizer",py
+meta-llama/llama,dimp170_sonar-analysis-dataset:snippet_156.py,"import json
+import os
+import sys
+import time
+from pathlib import Path
+from typing import List, Literal, Optional, Tuple, TypedDict
+
+import torch
+import torch.nn.functional as F
+from fairscale.nn.model...",py
+meta-llama/llama,dimp170_sonar-analysis-dataset:snippet_157.py,"import math
+from dataclasses import dataclass
+from typing import Optional, Tuple
+
+import fairscale.nn.model_parallel.initialize as fs_init
+import torch
+import torch.nn.functional as F
+from fairscale.n...",py
+zylon-ai/private-gpt,dimp170_sonar-analysis-dataset:snippet_158.py,"import logging
+import os
+
+
+ROOT_LOG_LEVEL = ""INFO""
+
+PRETTY_LOG_FORMAT = (
+    ""%(asctime)s.%(msecs)03d [%(levelname)-8s] %(name)+25s - %(message)s""
+)
+logging.basicConfig(level=ROOT_LOG_LEVEL, format=P...",py
+zylon-ai/private-gpt,dimp170_sonar-analysis-dataset:snippet_159.py,"import uvicorn
+
+from private_gpt.main import app
+from private_gpt.settings.settings import settings
+
+
+
+
+uvicorn.run(app, host=""0.0.0.0"", port=settings().server.port, log_config=None)",py
+soimort/you-get,dimp170_sonar-analysis-dataset:snippet_160.py,"PROJ_NAME = 'you-get'
+PACKAGE_NAME = 'you_get'
+
+PROJ_METADATA = '%s.json' % PROJ_NAME
+
+import importlib.util
+import importlib.machinery
+
+def load_source(modname, filename):
+    loader = importlib.mach...",py
+soimort/you-get,dimp170_sonar-analysis-dataset:snippet_161.py,"import sys
+
+if sys.version_info[0] == 3:
+    
+    
+
+    from .__main__ import *
+
+    
+    
+    
+    
+else:
+    
+    pass",py
+soimort/you-get,dimp170_sonar-analysis-dataset:snippet_162.py,"import getopt
+import os
+import platform
+import sys
+from .version import script_name, __version__
+from .util import git, log
+
+_options = [
+    'help',
+    'version',
+    'gui',
+    'force',
+    'playli...",py
+scrapy/scrapy,dimp170_sonar-analysis-dataset:snippet_163.py,"from pathlib import Path
+
+import pytest
+from twisted.web.http import H2_ENABLED
+
+from scrapy.utils.reactor import install_reactor
+from tests.keys import generate_keys
+
+
+def _py_files(folder):
+    retu...",py
+scrapy/scrapy,dimp170_sonar-analysis-dataset:snippet_164.py,"from collections.abc import Sequence
+from operator import itemgetter
+from typing import Any, TypedDict
+
+from docutils import nodes
+from docutils.nodes import Element, General, Node, document
+from docu...",py
+scrapy/scrapy,dimp170_sonar-analysis-dataset:snippet_165.py,"from sphinx.application import Sphinx
+
+
+def maybe_skip_member(app: Sphinx, what, name: str, obj, skip: bool, options) -> bool:
+    if not skip:
+        
+        return name in {""default_item_class"", ""...",py
+scrapy/scrapy,dimp170_sonar-analysis-dataset:snippet_166.py,"import os
+import sys
+from collections.abc import Sequence
+from pathlib import Path
+
+
+
+sys.path.append(str(Path(__file__).parent / ""_ext""))
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+
+
+
+
+pr...",py
+scrapy/scrapy,dimp170_sonar-analysis-dataset:snippet_167.py,"from doctest import ELLIPSIS, NORMALIZE_WHITESPACE
+from pathlib import Path
+
+from sybil import Sybil
+from sybil.parsers.doctest import DocTestParser
+from sybil.parsers.skip import skip
+
+try:
+    
+    ...",py
+ageitgey/face_recognition,dimp170_sonar-analysis-dataset:snippet_168.py,"import sys
+import os
+from unittest.mock import MagicMock
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+            return MagicMock()
+
+MOCK_MODULES = ['face_recognition_mode...",py
+ageitgey/face_recognition,dimp170_sonar-analysis-dataset:snippet_169.py,"import timeit
+
+
+
+
+
+
+
+TEST_IMAGES = [
+    ""obama-240p.jpg"",
+    ""obama-480p.jpg"",
+    ""obama-720p.jpg"",
+    ""obama-1080p.jpg""
+]
+
+
+def run_test(setup, test, iterations_per_test=5, tests_to_run=10):
+    ...",py
+ageitgey/face_recognition,dimp170_sonar-analysis-dataset:snippet_170.py,"import face_recognition
+import cv2
+import time
+from scipy.spatial import distance as dist
+
+EYES_CLOSED_SECONDS = 5
+
+def main():
+    closed_count = 0
+    video_capture = cv2.VideoCapture(0)
+
+    ret, f...",py
+ageitgey/face_recognition,dimp170_sonar-analysis-dataset:snippet_171.py,"import face_recognition
+import cv2
+
+
+
+
+
+
+
+
+video_capture = cv2.VideoCapture(0)
+
+
+face_locations = []
+
+while True:
+    
+    ret, frame = video_capture.read()
+
+    
+    small_frame = cv2.resize(frame, (...",py
+ageitgey/face_recognition,dimp170_sonar-analysis-dataset:snippet_172.py,"from PIL import Image, ImageDraw
+import face_recognition
+
+
+image = face_recognition.load_image_file(""biden.jpg"")
+
+
+face_landmarks_list = face_recognition.face_landmarks(image)
+
+pil_image = Image.froma...",py
+CorentinJ/Real-Time-Voice-Cloning,dimp170_sonar-analysis-dataset:snippet_173.py,"import argparse
+import os
+from pathlib import Path
+
+import librosa
+import numpy as np
+import soundfile as sf
+import torch
+
+from encoder import inference as encoder
+from encoder.params_model import mod...",py
+CorentinJ/Real-Time-Voice-Cloning,dimp170_sonar-analysis-dataset:snippet_174.py,"import argparse
+import os
+from pathlib import Path
+
+from toolbox import Toolbox
+from utils.argutils import print_args
+from utils.default_models import ensure_default_models
+
+
+if __name__ == '__main__'...",py
+CorentinJ/Real-Time-Voice-Cloning,dimp170_sonar-analysis-dataset:snippet_175.py,"from scipy.ndimage.morphology import binary_dilation
+from encoder.params_data import *
+from pathlib import Path
+from typing import Optional, Union
+from warnings import warn
+import numpy as np
+import l...",py
+CorentinJ/Real-Time-Voice-Cloning,dimp170_sonar-analysis-dataset:snippet_176.py,"librispeech_datasets = {
+    ""train"": {
+        ""clean"": [""LibriSpeech/train-clean-100"", ""LibriSpeech/train-clean-360""],
+        ""other"": [""LibriSpeech/train-other-500""]
+    },
+    ""test"": {
+        ""...",py
+deepfakes/faceswap,dimp170_sonar-analysis-dataset:snippet_177.py,"import os
+import sys
+from unittest import mock
+
+os.environ[""FACESWAP_BACKEND""] = ""nvidia""
+sys.path.insert(0, os.path.abspath('../'))
+sys.setrecursionlimit(1500)
+
+
+MOCK_MODULES = [""pynvx"", ""ctypes.wind...",py
+deepfakes/faceswap,dimp170_sonar-analysis-dataset:snippet_178.py,"import gettext
+import locale
+import os
+import sys
+
+
+if sys.platform.startswith(""win""):
+    os.environ[""LANG""], _ = locale.getdefaultlocale()
+
+from lib.cli import args as cli_args  
+from lib.cli.args_t...",py
+deepfakes/faceswap,dimp170_sonar-analysis-dataset:snippet_179.py,from . import logger,py
+deepfakes/faceswap,dimp170_sonar-analysis-dataset:snippet_180.py,"from .aligned_face import (AlignedFace, get_adjusted_center, get_matrix_scaling,
+                           get_centered_size, transform_image)
+from .aligned_mask import BlurMask, LandmarksMask, Mask
+...",py
+deepfakes/faceswap,dimp170_sonar-analysis-dataset:snippet_181.py,"from __future__ import annotations
+
+from dataclasses import dataclass, field
+import logging
+import typing as T
+
+from threading import Lock
+
+import cv2
+import numpy as np
+
+from lib.logger import parse_...",py
+AntonOsika/gpt-engineer,dimp170_sonar-analysis-dataset:snippet_182.py,"import os
+import sys
+
+from pathlib import Path
+
+import toml
+
+sys.path.insert(0, os.path.abspath(""..""))
+
+ROOT_DIR = Path(__file__).parents[1].absolute()
+
+with open(""../pyproject.toml"") as f:
+    data =...",py
+AntonOsika/gpt-engineer,dimp170_sonar-analysis-dataset:snippet_183.py,"import glob
+import re
+
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).parents[1].absolute()
+print(ROOT_DIR)
+PKG_DIR = ROOT_DIR / ""gpt_engineer""
+WRITE_FILE = Path(__file__).parent / ""api_reference...",py
+AntonOsika/gpt-engineer,dimp170_sonar-analysis-dataset:snippet_184.py,"import os
+
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+from langchain_openai import ChatOpenAI
+
+model = ChatOpenAI(
+    model=os.getenv(""MODEL_NAME""),
+    temperatu...",py
+AntonOsika/gpt-engineer,dimp170_sonar-analysis-dataset:snippet_185.py,"import os
+
+from openai import OpenAI
+
+client = OpenAI(
+    base_url=os.getenv(""OPENAI_API_BASE""), api_key=os.getenv(""OPENAI_API_KEY"")
+)
+
+response = client.chat.completions.create(
+    model=os.getenv(...",py
+AntonOsika/gpt-engineer,dimp170_sonar-analysis-dataset:snippet_186.py,,py
+psf/requests,dimp170_sonar-analysis-dataset:snippet_187.py,"from pygments.style import Style
+from pygments.token import Keyword, Name, Comment, String, Error, \
+     Number, Operator, Generic, Whitespace, Punctuation, Other, Literal
+
+
+class FlaskyStyle(Style):...",py
+psf/requests,dimp170_sonar-analysis-dataset:snippet_188.py,"import sys
+import os
+
+
+
+
+
+
+
+sys.path.insert(0, os.path.abspath(""..""))
+sys.path.insert(0, os.path.abspath(""_themes""))
+
+import requests
+
+
+
+
+
+
+
+
+
+
+extensions = [
+    ""sphinx.ext.autodoc"",
+    ""sphinx.ext...",py
+psf/requests,dimp170_sonar-analysis-dataset:snippet_189.py,"import os
+import sys
+from codecs import open
+
+from setuptools import setup
+
+CURRENT_PYTHON = sys.version_info[:2]
+REQUIRED_PYTHON = (3, 8)
+
+if CURRENT_PYTHON < REQUIRED_PYTHON:
+    sys.stderr.write(
+ ...",py
+psf/requests,dimp170_sonar-analysis-dataset:snippet_190.py,"import warnings
+
+import urllib3
+
+from .exceptions import RequestsDependencyWarning
+
+try:
+    from charset_normalizer import __version__ as charset_normalizer_version
+except ImportError:
+    charset_no...",py
+psf/requests,dimp170_sonar-analysis-dataset:snippet_191.py,"__title__ = ""requests""
+__description__ = ""Python HTTP for Humans.""
+__url__ = ""https://requests.readthedocs.io""
+__version__ = ""2.32.3""
+__build__ = 0x023203
+__author__ = ""Kenneth Reitz""
+__author_email__...",py
+ultralytics/yolov5,dimp170_sonar-analysis-dataset:snippet_192.py,"import argparse
+import platform
+import sys
+import time
+from pathlib import Path
+
+import pandas as pd
+
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[0]  
+if str(ROOT) not in sys.path:
+    sys.pat...",py
+ultralytics/yolov5,dimp170_sonar-analysis-dataset:snippet_193.py,"import argparse
+import os
+import platform
+import sys
+from pathlib import Path
+
+import torch
+import torch.nn.functional as F
+
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[1]  
+if str(ROOT) not i...",py
+ultralytics/yolov5,dimp170_sonar-analysis-dataset:snippet_194.py,"import argparse
+import os
+import subprocess
+import sys
+import time
+from copy import deepcopy
+from datetime import datetime
+from pathlib import Path
+
+import torch
+import torch.distributed as dist
+impor...",py
+ultralytics/yolov5,dimp170_sonar-analysis-dataset:snippet_195.py,"import argparse
+import os
+import sys
+from pathlib import Path
+
+import torch
+from tqdm import tqdm
+
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[1]  
+if str(ROOT) not in sys.path:
+    sys.path.a...",py
+ultralytics/yolov5,dimp170_sonar-analysis-dataset:snippet_196.py,"import argparse
+import csv
+import os
+import platform
+import sys
+from pathlib import Path
+
+import torch
+
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[0]  
+if str(ROOT) not in sys.path:
+    sys.p...",py
+commaai/openpilot,dimp170_sonar-analysis-dataset:snippet_197.py,"import os
+import capnp
+
+CEREAL_PATH = os.path.dirname(os.path.abspath(__file__))
+capnp.remove_import_hook()
+
+log = capnp.load(os.path.join(CEREAL_PATH, ""log.capnp""))
+car = capnp.load(os.path.join(CERE...",py
+commaai/openpilot,dimp170_sonar-analysis-dataset:snippet_198.py,"from msgq.ipc_pyx import Context, Poller, SubSocket, PubSocket, SocketEventHandle, toggle_fake_events, \
+                                set_fake_prefix, get_fake_prefix, delete_fake_prefix, wait_for_...",py
+commaai/openpilot,dimp170_sonar-analysis-dataset:snippet_199.py,"import os
+import capnp
+import multiprocessing
+import numbers
+import random
+import threading
+import time
+from parameterized import parameterized
+import pytest
+
+from cereal import log, car
+import cereal...",py
+commaai/openpilot,dimp170_sonar-analysis-dataset:snippet_200.py,"import random
+import time
+from typing import Sized, cast
+
+import cereal.messaging as messaging
+from cereal.messaging.tests.test_messaging import events, random_sock, random_socks, \
+                  ...",py
+Z4nzu/hackingtool,dimp170_sonar-analysis-dataset:snippet_201.py,"import os
+import sys
+import webbrowser
+from platform import system
+from traceback import print_exc
+from typing import Callable
+from typing import List
+from typing import Tuple
+
+
+def clear_screen():
+  ...",py
+Z4nzu/hackingtool,dimp170_sonar-analysis-dataset:snippet_202.py,"import re
+
+from core import HackingTool
+from core import HackingToolsCollection
+from hackingtool import all_tools
+
+
+def sanitize_anchor(s):
+    return re.sub(r""\W"", ""-"", s.lower())
+
+
+def get_toc(tools...",py
+Z4nzu/hackingtool,dimp170_sonar-analysis-dataset:snippet_203.py,"import os
+import sys
+import webbrowser
+from platform import system
+from time import sleep
+
+from core import HackingToolsCollection
+from tools.anonsurf import AnonSurfTools
+from tools.ddos import DDOST...",py
+Z4nzu/hackingtool,dimp170_sonar-analysis-dataset:snippet_204.py,"import os
+
+from core import HackingTool
+from core import HackingToolsCollection
+
+
+class AnonymouslySurf(HackingTool):
+    TITLE = ""Anonymously Surf""
+    DESCRIPTION = ""It automatically overwrites the ...",py
+Z4nzu/hackingtool,dimp170_sonar-analysis-dataset:snippet_205.py,"import os
+import subprocess
+
+from core import HackingTool
+from core import HackingToolsCollection
+
+
+class ddos(HackingTool):
+    TITLE = ""ddos""
+    DESCRIPTION = (
+        ""Best DDoS Attack Script Wit...",py
