@@ -1,12 +1,14 @@
 import requests
 import pandas as pd
-import time
+import os
 
 SONARCLOUD_TOKEN = "82a8fe6df3b0391119aa62fd413df6db3707e9b1"
 ORGANIZATION_KEY = "gamify"
-PROJECT_KEY = "dimp170_sonar-analysis-dataset"
+PROJECT_KEY = "dimp170_refined-sonar-analysis"
 HEADERS = {"Authorization": f"Bearer {SONARCLOUD_TOKEN}"}
 
+full_results = []
+snippet_results = []
 
 def get_sonar_files():
     sonar_files = {}
@@ -26,28 +28,12 @@ def get_sonar_files():
 
         if response.status_code == 200:
             components = response.json().get("components", [])
-            if not components:
-                break
-
-
-            print(f"SonarCloud Retrieved Files (First 5): {[c['path'] for c in components[:5]]}")
-
-
-            for c in components:
-                file_path = c.get("path", c.get("name", None))
-                component_key = c.get("key")
-
-                if file_path and component_key:
-                    sonar_files[f"{PROJECT_KEY}:{file_path}"] = component_key
-
-            page += 1
-            time.sleep(0.5)
-
+            file_paths = [c["path"] for c in components]
+            print(f"SonarCloud Retrieved Files (First 5): {file_paths[:5]}")
+            return {c["path"]: c["key"] for c in components}
         else:
             print(f"API Error: {response.status_code} - {response.text}")
             break
-
-    return sonar_files
 
 
 
@@ -104,20 +90,42 @@ def get_all_sonar_metrics(component_key):
     else:
         print(f"API Error ({component_key}): {response.status_code} - {response.text}")
         return {}
+def get_code(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        full_code = f.read()
+        snippet = "\n".join(full_code.split("\n")[:5]) + "..."
+        return full_code, snippet
+
+
+
 
 sonar_results_all_metrics = {}
-for index, row in df_filtered.iterrows():
-    component_key = row["sonar_component_key"]
-    sonar_results_all_metrics[row["file_path"]] = get_all_sonar_metrics(component_key)
+for file_path, component_key in sonar_files.items():
+    clean_file_name = os.path.basename(file_path)
+    full_code, snippet = get_code(file_path)
+    metrics = get_all_sonar_metrics(component_key)
 
-sonar_df_all_metrics = pd.DataFrame.from_dict(sonar_results_all_metrics, orient="index")
-sonar_df_all_metrics.reset_index(inplace=True)
-sonar_df_all_metrics.rename(columns={"index": "file_path"}, inplace=True)
+    full_row = {
+        "file_name": clean_file_name,
+        "full_code": full_code
+    }
+    full_row.update(metrics)
+    full_results.append(full_row)
 
-df_final = df_filtered.merge(sonar_df_all_metrics, on="file_path", how="left")
+    snippet_row = {
+        "file_name": clean_file_name,
+        "snippet": snippet
+    }
+    snippet_row.update(metrics)
+    snippet_results.append(snippet_row)
 
-final_file_path = "github_code_dataset_with_all_sonar_metrics.csv"
-df_final.to_csv(final_file_path, index=False)
+df_full = pd.DataFrame(full_results)
+df_snip = pd.DataFrame(snippet_results)
+
+df_full.to_csv("refined-sonar-metrics-for-ai.csv")
+df_snip.to_csv("refined-sonar-metrics.csv")
+
+
 
 
 

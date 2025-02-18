@@ -1,0 +1,106 @@
+,complexity,bugs,code_smells,duplicated_lines_density,cognitive_complexity,security_rating,ncloc,vulnerabilities,file_path
+0,11,0,3,0.0,22,1.0,93,0,smaller-git-dataset/12306.py
+1,23,0,0,0.0,24,1.0,72,0,smaller-git-dataset/8_puzzle.py
+2,0,0,0,0.0,0,1.0,0,0,smaller-git-dataset/__init__.py
+3,1,0,0,0.0,1,1.0,3,0,smaller-git-dataset/__main__.py
+4,0,0,0,0.0,0,1.0,1,0,smaller-git-dataset/_metadata.py
+5,7,0,0,0.0,9,1.0,23,0,smaller-git-dataset/A solution to project euler problem 3.py
+6,18,1,2,0.0,21,1.0,58,0,smaller-git-dataset/Add_two_Linked_List.py
+7,2,0,0,0.0,1,5.0,55,1,smaller-git-dataset/Anonymous_TextApp.py
+8,32,0,5,0.0,54,1.0,159,0,smaller-git-dataset/api_gen.py
+9,0,0,0,0.0,0,1.0,6,0,smaller-git-dataset/AREA OF TRIANGLE.py
+10,0,0,0,0.0,0,1.0,6,0,smaller-git-dataset/AreaOfTriangle.py
+11,1,0,1,0.0,0,1.0,5,0,smaller-git-dataset/ARKA.py
+12,4,0,0,0.0,4,1.0,12,0,smaller-git-dataset/Armstrong_number.py
+13,0,0,0,0.0,0,1.0,2,0,smaller-git-dataset/ASCIIvaluecharacter.py
+14,7,0,0,0.0,26,1.0,44,0,smaller-git-dataset/baiduwenku.py
+15,18,0,3,0.0,16,1.0,76,0,smaller-git-dataset/baiduwenku_pro_1.py
+16,24,1,1,0.0,51,1.0,75,0,smaller-git-dataset/Base Converter Number system.py
+17,2,0,0,0.0,5,1.0,16,0,smaller-git-dataset/Battery_notifier.py
+18,17,0,1,0.0,26,1.0,74,0,smaller-git-dataset/benchmark.py
+19,4,0,2,0.0,3,1.0,18,0,smaller-git-dataset/Binary Coefficients.py
+20,5,0,0,0.0,8,1.0,18,0,smaller-git-dataset/Binary_search.py
+21,2,0,2,0.0,1,1.0,9,0,smaller-git-dataset/Binary_to_Decimal.py
+22,19,0,3,0.0,28,1.0,127,0,smaller-git-dataset/biqukan.py
+23,12,0,3,0.0,16,1.0,45,0,smaller-git-dataset/BruteForce.py
+24,0,0,0,0.0,0,1.0,6,0,smaller-git-dataset/build.py
+25,7,0,3,0.0,4,1.0,36,0,smaller-git-dataset/Caesar Cipher Encoder  & Decoder.py
+26,3,0,3,0.0,4,1.0,16,0,smaller-git-dataset/Calculate resistance.py
+27,9,0,1,0.0,12,1.0,35,0,smaller-git-dataset/Calculator with simple ui.py
+28,1,0,1,0.0,0,1.0,23,0,smaller-git-dataset/Calendar (GUI).py
+29,0,0,0,0.0,0,1.0,14,0,smaller-git-dataset/changelog.py
+30,7,0,3,0.0,9,1.0,19,0,smaller-git-dataset/Chrome Dino Automater.py
+31,1,0,0,0.0,0,1.0,12,0,cleaner.py
+32,3,0,0,0.0,3,1.0,85,0,smaller-git-dataset/cli.py
+33,10,0,1,0.0,6,1.0,50,0,smaller-git-dataset/conanfile.py
+34,0,0,0,0.0,0,1.0,13,0,smaller-git-dataset/config.py
+35,5,0,0,0.0,5,1.0,44,0,smaller-git-dataset/conftest.py
+36,12,0,0,0.0,23,1.0,61,0,smaller-git-dataset/crawl_sourcecode.py
+37,13,0,0,0.0,20,1.0,100,0,smaller-git-dataset/daili.py
+38,9,0,0,0.0,7,1.0,38,0,smaller-git-dataset/dangdang_top_500.py
+39,7,0,2,0.0,28,1.0,120,0,smaller-git-dataset/demo_cli.py
+40,2,0,0,0.0,0,1.0,8,0,smaller-git-dataset/demo_closures.py
+41,2,0,0,0.0,3,1.0,27,0,smaller-git-dataset/demo_toolbox.py
+42,,0,0,0.0,0,1.0,,0,smaller-git-dataset/douban_top_250_books.py
+43,9,0,2,0.0,12,1.0,69,0,smaller-git-dataset/douban_top_250_books_mul_process.py
+44,15,0,1,20.1,15,4.0,79,4,smaller-git-dataset/douyin.py
+45,17,0,0,16.9,17,4.0,94,4,smaller-git-dataset/douyin_pro.py
+46,0,1,0,0.0,0,1.0,18,0,smaller-git-dataset/download_checks.py
+47,11,0,1,0.0,12,1.0,49,0,smaller-git-dataset/downloader.py
+48,4,0,1,0.0,10,1.0,62,0,smaller-git-dataset/encoder_preprocess.py
+49,1,0,0,0.0,1,1.0,39,0,smaller-git-dataset/encoder_train.py
+50,13,0,5,0.0,32,1.0,158,0,smaller-git-dataset/financical.py
+51,19,0,10,0.0,21,1.0,110,0,smaller-git-dataset/fuck_bilibili_captcha.py
+52,42,0,13,19.5,39,1.0,182,0,smaller-git-dataset/geetest.py
+53,2,0,2,0.0,2,1.0,28,0,smaller-git-dataset/generate_changelog.py
+54,3,0,0,0.0,1,1.0,22,0,smaller-git-dataset/generate_pxi.py
+55,60,0,7,0.0,108,1.0,191,0,smaller-git-dataset/generate_stubs.py
+56,6,0,0,0.0,8,1.0,52,0,smaller-git-dataset/generate_version.py
+57,0,0,0,0.0,0,1.0,0,0,github-scraper.py
+58,13,0,2,0.0,5,1.0,144,0,smaller-git-dataset/gunicorn.config.py
+59,2,0,0,0.0,1,1.0,10,0,smaller-git-dataset/hatch_build.py
+60,15,0,0,0.0,16,1.0,145,0,smaller-git-dataset/hero.py
+61,5,0,1,0.0,13,1.0,47,0,smaller-git-dataset/hubconf.py
+62,1,0,0,0.0,0,1.0,7,0,idc.py
+63,13,0,1,0.0,22,1.0,80,0,idk.py
+64,8,0,4,0.0,5,1.0,86,0,smaller-git-dataset/ikun_basketball.py
+65,21,0,1,0.0,10,1.0,132,0,smaller-git-dataset/input_data.py
+66,12,0,0,0.0,6,1.0,32,0,smaller-git-dataset/linter_plugin.py
+67,1,0,0,0.0,1,1.0,23,0,smaller-git-dataset/main.py
+68,10,0,0,0.0,5,1.0,37,0,smaller-git-dataset/makeHosts.py
+69,1,0,0,0.0,1,1.0,6,0,smaller-git-dataset/manage.py
+70,13,0,3,0.0,9,1.0,66,0,smaller-git-dataset/meizitu.py
+71,2,0,0,0.0,1,1.0,6,0,smaller-git-dataset/mixed_tabs_and_spaces.py
+72,2,0,0,0.0,0,1.0,13,0,smaller-git-dataset/mymodule.py
+73,6,0,0,0.0,1,1.0,36,0,smaller-git-dataset/noxfile.py
+74,0,0,0,0.0,0,1.0,0,0,optimized-code.py
+75,7,0,0,0.0,3,1.0,59,0,smaller-git-dataset/pavement.py
+76,3,0,0,0.0,2,1.0,14,0,smaller-git-dataset/pdm_build.py
+77,23,0,0,0.0,22,1.0,115,0,smaller-git-dataset/pip_build.py
+78,0,0,0,0.0,0,1.0,4,0,smaller-git-dataset/pip_deploy.py
+79,3,0,0,0.0,4,1.0,28,0,smaller-git-dataset/release.py
+80,8,0,1,0.0,8,1.0,53,0,smaller-git-dataset/release_utils.py
+81,2,1,0,0.0,2,1.0,25,0,smaller-git-dataset/render_readme.py
+82,1,0,0,0.0,1,1.0,6,0,smaller-git-dataset/run-venv.py
+83,1,0,0,0.0,1,1.0,6,0,smaller-git-dataset/run.py
+84,2,0,3,0.0,1,1.0,5,0,smaller-git-dataset/run_example.py
+85,9,0,0,0.0,13,1.0,71,0,smaller-git-dataset/runtests.py
+86,0,0,1,0.0,0,1.0,38,0,smaller-git-dataset/setting.py
+87,1,0,0,0.0,2,1.0,60,0,smaller-git-dataset/setup.py
+88,6,0,0,0.0,15,1.0,43,0,smaller-git-dataset/shuaia.py
+89,10,0,2,0.0,16,1.0,44,0,smaller-git-dataset/sort.py
+90,2,0,0,0.0,3,1.0,39,0,smaller-git-dataset/synthesizer_preprocess_audio.py
+91,1,0,0,0.0,1,1.0,21,0,smaller-git-dataset/synthesizer_preprocess_embeds.py
+92,1,0,0,0.0,1,1.0,30,0,smaller-git-dataset/synthesizer_train.py
+93,2,0,0,0.0,1,1.0,6,0,smaller-git-dataset/test.py
+94,1,0,0,0.0,1,1.0,3,0,smaller-git-dataset/train.py
+95,21,0,1,0.0,45,1.0,96,0,smaller-git-dataset/update.py
+96,5,0,0,0.0,5,1.0,21,0,smaller-git-dataset/update_version.py
+97,11,0,1,0.0,23,1.0,95,0,smaller-git-dataset/updateReadme.py
+98,15,0,8,0.0,14,1.0,69,0,smaller-git-dataset/utils.py
+99,1,0,0,0.0,1,1.0,18,0,smaller-git-dataset/version.py
+100,4,0,0,0.0,7,1.0,39,0,smaller-git-dataset/vocoder_preprocess.py
+101,3,0,0,0.0,5,1.0,45,0,smaller-git-dataset/vocoder_train.py
+102,7,0,1,0.0,4,1.0,65,0,smaller-git-dataset/wechat_moment.py
+103,6,0,3,0.0,7,1.0,59,0,smaller-git-dataset/wechat_public_account.py
+104,85,0,4,0.0,125,1.0,394,0,smaller-git-dataset/whats_left.py
