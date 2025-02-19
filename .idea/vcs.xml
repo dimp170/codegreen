@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mostest_complex_python" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/optimized_complex_repo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/optimized_repo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sonar-analysis-dataset" vcs="Git" />
   </component>
 </project>

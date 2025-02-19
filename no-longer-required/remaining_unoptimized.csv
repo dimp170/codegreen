@@ -1,0 +1,1363 @@
+file_name,full_code,complexity,bugs,code_smells,duplicated_lines_density,cognitive_complexity,security_rating,ncloc,vulnerabilities,optimized_code
+synthesizer_preprocess_embeds.py,"from synthesizer.preprocess import create_embeddings
+from utils.argutils import print_args
+from pathlib import Path
+import argparse
+
+
+if __name__ == ""__main__"":
+    parser = argparse.ArgumentParser(
+        description=""Creates embeddings for the synthesizer from the LibriSpeech utterances."",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(""synthesizer_root"", type=Path, help=\
+        ""Path to the synthesizer training data that contains the audios and the train.txt file. ""
+        ""If you let everything as default, it should be <datasets_root>/SV2TTS/synthesizer/."")
+    parser.add_argument(""-e"", ""--encoder_model_fpath"", type=Path,
+                        default=""saved_models/default/encoder.pt"", help=\
+        ""Path your trained encoder model."")
+    parser.add_argument(""-n"", ""--n_processes"", type=int, default=4, help= \
+        ""Number of parallel processes. An encoder is created for each, so you may need to lower ""
+        ""this value on GPUs with low memory. Set it to 1 if CUDA is unhappy."")
+    args = parser.parse_args()
+
+    # Preprocess the dataset
+    print_args(args, parser)
+    create_embeddings(**vars(args))
+",1.0,0,0,0.0,1,1.0,21.0,0,"from synthesizer.preprocess import create_embeddings
+from utils.argutils import print_args
+from pathlib import Path
+import argparse
+
+
+if __name__ == ""__main__"":
+    parser = argparse.ArgumentParser(
+        description=""Creates embeddings for the synthesizer from the LibriSpeech utterances."",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(""synthesizer_root"", type=Path, help=\
+        ""Path to the synthesizer training data that contains the audios and the train.txt file. ""
+        ""If you let everything as default, it should be <datasets_root>/SV2TTS/synthesizer/."")
+    parser.add_argument(""-e"", ""--encoder_model_fpath"", type=Path,
+                        default=""saved_models/default/encoder.pt"", help=\
+        ""Path your trained encoder model."")
+    parser.add_argument(""-n"", ""--n_processes"", type=int, default=4, help= \
+        ""Number of parallel processes. An encoder is created for each, so you may need to lower ""
+        ""this value on GPUs with low memory. Set it to 1 if CUDA is unhappy."")
+    args = parser.parse_args()
+
+    # Preprocess the dataset
+    print_args(args, parser)
+    create_embeddings(**vars(args))
+"
+setup.py,"#!/usr/bin/env python
+
+from pathlib import Path
+
+from setuptools import find_packages, setup
+
+here = Path(__file__).resolve().parent
+README = (here / ""README.rst"").read_text(encoding=""utf-8"")
+VERSION = (here / ""VERSION"").read_text(encoding=""utf-8"").strip()
+
+excluded_packages = [""docs"", ""tests"", ""tests.*""]
+
+
+# this module can be zip-safe if the zipimporter implements iter_modules or if
+# pkgutil.iter_importer_modules has registered a dispatch for the zipimporter.
+try:
+    import pkgutil
+    import zipimport
+
+    zip_safe = (
+        hasattr(zipimport.zipimporter, ""iter_modules"")
+        or zipimport.zipimporter in pkgutil.iter_importer_modules.registry.keys()
+    )
+except AttributeError:
+    zip_safe = False
+
+setup(
+    name=""Faker"",
+    version=VERSION,
+    description=""Faker is a Python package that generates fake data for you."",
+    long_description=README,
+    entry_points={
+        ""console_scripts"": [""faker=faker.cli:execute_from_command_line""],
+        ""pytest11"": [""faker = faker.contrib.pytest.plugin""],
+    },
+    classifiers=[
+        # See https://pypi.org/pypi?%3Aaction=list_classifiers
+        ""Development Status :: 5 - Production/Stable"",
+        ""Environment :: Console"",
+        ""Intended Audience :: Developers"",
+        ""Programming Language :: Python :: 3.9"",
+        ""Programming Language :: Python :: 3.10"",
+        ""Programming Language :: Python :: 3.11"",
+        ""Programming Language :: Python :: 3.12"",
+        ""Programming Language :: Python :: 3.13"",
+        ""Programming Language :: Python :: Implementation :: CPython"",
+        ""Programming Language :: Python :: Implementation :: PyPy"",
+        ""Topic :: Software Development :: Libraries :: Python Modules"",
+        ""Topic :: Software Development :: Testing"",
+        ""Topic :: Utilities"",
+        ""License :: OSI Approved :: MIT License"",
+    ],
+    keywords=""faker fixtures data test mock generator"",
+    author=""joke2k"",
+    author_email=""joke2k@gmail.com"",
+    url=""https://github.com/joke2k/faker"",
+    project_urls={
+        ""Bug Tracker"": ""https://github.com/joke2k/faker/issues"",
+        ""Changes"": ""https://github.com/joke2k/faker/blob/master/CHANGELOG.md"",
+        ""Documentation"": ""http://faker.rtfd.org/"",
+        ""Source Code"": ""https://github.com/joke2k/faker"",
+    },
+    license=""MIT License"",
+    packages=find_packages(exclude=excluded_packages),
+    package_data={
+        ""faker"": [""py.typed"", ""proxy.pyi""],
+    },
+    platforms=[""any""],
+    zip_safe=zip_safe,
+    install_requires=[""tzdata""],
+    python_requires="">=3.9"",
+)
+",1.0,0,0,0.0,2,1.0,60.0,0,"#!/usr/bin/env python
+
+from pathlib import Path
+
+from setuptools import find_packages, setup
+
+here = Path(__file__).resolve().parent
+README = (here / ""README.rst"").read_text(encoding=""utf-8"")
+VERSION = (here / ""VERSION"").read_text(encoding=""utf-8"").strip()
+
+excluded_packages = [""docs"", ""tests"", ""tests.*""]
+
+
+# this module can be zip-safe if the zipimporter implements iter_modules or if
+# pkgutil.iter_importer_modules has registered a dispatch for the zipimporter.
+try:
+    import pkgutil
+    import zipimport
+
+    zip_safe = (
+        hasattr(zipimport.zipimporter, ""iter_modules"")
+        or zipimport.zipimporter in pkgutil.iter_importer_modules.registry.keys()
+    )
+except AttributeError:
+    zip_safe = False
+
+setup(
+    name=""Faker"",
+    version=VERSION,
+    description=""Faker is a Python package that generates fake data for you."",
+    long_description=README,
+    entry_points={
+        ""console_scripts"": [""faker=faker.cli:execute_from_command_line""],
+        ""pytest11"": [""faker = faker.contrib.pytest.plugin""],
+    },
+    classifiers=[
+        # See https://pypi.org/pypi?%3Aaction=list_classifiers
+        ""Development Status :: 5 - Production/Stable"",
+        ""Environment :: Console"",
+        ""Intended Audience :: Developers"",
+        ""Programming Language :: Python :: 3.9"",
+        ""Programming Language :: Python :: 3.10"",
+        ""Programming Language :: Python :: 3.11"",
+        ""Programming Language :: Python :: 3.12"",
+        ""Programming Language :: Python :: 3.13"",
+        ""Programming Language :: Python :: Implementation :: CPython"",
+        ""Programming Language :: Python :: Implementation :: PyPy"",
+        ""Topic :: Software Development :: Libraries :: Python Modules"",
+        ""Topic :: Software Development :: Testing"",
+        ""Topic :: Utilities"",
+        ""License :: OSI Approved :: MIT License"",
+    ],
+    keywords=""faker fixtures data test mock generator"",
+    author=""joke2k"",
+    author_email=""joke2k@gmail.com"",
+    url=""https://github.com/joke2k/faker"",
+    project_urls={
+        ""Bug Tracker"": ""https://github.com/joke2k/faker/issues"",
+        ""Changes"": ""https://github.com/joke2k/faker/blob/master/CHANGELOG.md"",
+        ""Documentation"": ""http://faker.rtfd.org/"",
+        ""Source Code"": ""https://github.com/joke2k/faker"",
+    },
+    license=""MIT License"",
+    packages=find_packages(exclude=excluded_packages),
+    package_data={
+        ""faker"": [""py.typed"", ""proxy.pyi""],
+    },
+    platforms=[""any""],
+    zip_safe=zip_safe,
+    install_requires=[""tzdata""],
+    python_requires="">=3.9"",
+)
+"
+biqukan.py,"# -*- coding:UTF-8 -*-
+from urllib import request
+from bs4 import BeautifulSoup
+import collections
+import re
+import os
+import time
+import sys
+import types
+
+""""""
+类说明:下载《笔趣看》网小说: url:https://www.biqukan.com/
+
+Parameters:
+	target - 《笔趣看》网指定的小说目录地址(string)
+
+Returns:
+	无
+
+Modify:
+	2017-05-06
+""""""
+class download(object):
+	def __init__(self, target):
+		self.__target_url = target
+		self.__head = {'User-Agent':'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19',}
+
+	""""""
+	函数说明:获取下载链接
+
+	Parameters:
+		无
+
+	Returns:
+		novel_name + '.txt' - 保存的小说名(string)
+		numbers - 章节数(int)
+		download_dict - 保存章节名称和下载链接的字典(dict)
+
+	Modify:
+		2017-05-06
+	""""""
+	def get_download_url(self):
+		charter = re.compile(u'[第弟](.+)章', re.IGNORECASE)
+		target_req = request.Request(url = self.__target_url, headers = self.__head)
+		target_response = request.urlopen(target_req)
+		target_html = target_response.read().decode('gbk','ignore')
+		listmain_soup = BeautifulSoup(target_html,'lxml')
+		chapters = listmain_soup.find_all('div',class_ = 'listmain')
+		download_soup = BeautifulSoup(str(chapters), 'lxml')
+		novel_name = str(download_soup.dl.dt).split(""》"")[0][5:]
+		flag_name = ""《"" + novel_name + ""》"" + ""正文卷""
+		numbers = (len(download_soup.dl.contents) - 1) / 2 - 8
+		download_dict = collections.OrderedDict()
+		begin_flag = False
+		numbers = 1
+		for child in download_soup.dl.children:
+			if child != '\n':
+				if child.string == u""%s"" % flag_name:
+					begin_flag = True
+				if begin_flag == True and child.a != None:
+					download_url = ""https://www.biqukan.com"" + child.a.get('href')
+					download_name = child.string
+					names = str(download_name).split('章')
+					name = charter.findall(names[0] + '章')
+					if name:
+							download_dict['第' + str(numbers) + '章 ' + names[1]] = download_url
+							numbers += 1
+		return novel_name + '.txt', numbers, download_dict
+	
+	""""""
+	函数说明:爬取文章内容
+
+	Parameters:
+		url - 下载连接(string)
+
+	Returns:
+		soup_text - 章节内容(string)
+
+	Modify:
+		2017-05-06
+	""""""
+	def Downloader(self, url):
+		download_req = request.Request(url = url, headers = self.__head)
+		download_response = request.urlopen(download_req)
+		download_html = download_response.read().decode('gbk','ignore')
+		soup_texts = BeautifulSoup(download_html, 'lxml')
+		texts = soup_texts.find_all(id = 'content', class_ = 'showtxt')
+		soup_text = BeautifulSoup(str(texts), 'lxml').div.text.replace('\xa0','')
+		return soup_text
+
+	""""""
+	函数说明:将爬取的文章内容写入文件
+
+	Parameters:
+		name - 章节名称(string)
+		path - 当前路径下,小说保存名称(string)
+		text - 章节内容(string)
+
+	Returns:
+		无
+
+	Modify:
+		2017-05-06
+	""""""
+	def Writer(self, name, path, text):
+		write_flag = True
+		with open(path, 'a', encoding='utf-8') as f:
+			f.write(name + '\n\n')
+			for each in text:
+				if each == 'h':
+					write_flag = False
+				if write_flag == True and each != ' ':
+					f.write(each)
+				if write_flag == True and each == '\r':
+					f.write('\n')			
+			f.write('\n\n')
+
+if __name__ == ""__main__"":
+	print(""\n\t\t欢迎使用《笔趣看》小说下载小工具\n\n\t\t作者:Jack-Cui\t时间:2017-05-06\n"")
+	print(""*************************************************************************"")
+	
+	#小说地址
+	target_url = str(input(""请输入小说目录下载地址:\n""))
+
+	#实例化下载类
+	d = download(target = target_url)
+	name, numbers, url_dict = d.get_download_url()
+	if name in os.listdir():
+		os.remove(name)
+	index = 1
+
+	#下载中
+	print(""《%s》下载中:"" % name[:-4])
+	for key, value in url_dict.items():
+		d.Writer(key, name, d.Downloader(value))
+		sys.stdout.write(""已下载:%.3f%%"" %  float(index/numbers) + '\r')
+		sys.stdout.flush()
+		index += 1	
+
+	print(""《%s》下载完成！"" % name[:-4])
+
+	
+",19.0,0,3,0.0,28,1.0,127.0,0,"# -*- coding:UTF-8 -*-
+from urllib import request
+from bs4 import BeautifulSoup
+import collections
+import re
+import os
+import time
+import sys
+import types
+
+""""""
+类说明:下载《笔趣看》网小说: url:https://www.biqukan.com/
+
+Parameters:
+	target - 《笔趣看》网指定的小说目录地址(string)
+
+Returns:
+	无
+
+Modify:
+	2017-05-06
+""""""
+class download(object):
+	def __init__(self, target):
+		self.__target_url = target
+		self.__head = {'User-Agent':'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19',}
+
+	""""""
+	函数说明:获取下载链接
+
+	Parameters:
+		无
+
+	Returns:
+		novel_name + '.txt' - 保存的小说名(string)
+		numbers - 章节数(int)
+		download_dict - 保存章节名称和下载链接的字典(dict)
+
+	Modify:
+		2017-05-06
+	""""""
+	def get_download_url(self):
+		charter = re.compile(u'[第弟](.+)章', re.IGNORECASE)
+		target_req = request.Request(url = self.__target_url, headers = self.__head)
+		target_response = request.urlopen(target_req)
+		target_html = target_response.read().decode('gbk','ignore')
+		listmain_soup = BeautifulSoup(target_html,'lxml')
+		chapters = listmain_soup.find_all('div',class_ = 'listmain')
+		download_soup = BeautifulSoup(str(chapters), 'lxml')
+		novel_name = str(download_soup.dl.dt).split(""》"")[0][5:]
+		flag_name = ""《"" + novel_name + ""》"" + ""正文卷""
+		numbers = (len(download_soup.dl.contents) - 1) / 2 - 8
+		download_dict = collections.OrderedDict()
+		begin_flag = False
+		numbers = 1
+		for child in download_soup.dl.children:
+			if child != '\n':
+				if child.string == u""%s"" % flag_name:
+					begin_flag = True
+				if begin_flag == True and child.a != None:
+					download_url = ""https://www.biqukan.com"" + child.a.get('href')
+					download_name = child.string
+					names = str(download_name).split('章')
+					name = charter.findall(names[0] + '章')
+					if name:
+							download_dict['第' + str(numbers) + '章 ' + names[1]] = download_url
+							numbers += 1
+		return novel_name + '.txt', numbers, download_dict
+	
+	""""""
+	函数说明:爬取文章内容
+
+	Parameters:
+		url - 下载连接(string)
+
+	Returns:
+		soup_text - 章节内容(string)
+
+	Modify:
+		2017-05-06
+	""""""
+	def Downloader(self, url):
+		download_req = request.Request(url = url, headers = self.__head)
+		download_response = request.urlopen(download_req)
+		download_html = download_response.read().decode('gbk','ignore')
+		soup_texts = BeautifulSoup(download_html, 'lxml')
+		texts = soup_texts.find_all(id = 'content', class_ = 'showtxt')
+		soup_text = BeautifulSoup(str(texts), 'lxml').div.text.replace('\xa0','')
+		return soup_text
+
+	""""""
+	函数说明:将爬取的文章内容写入文件
+
+	Parameters:
+		name - 章节名称(string)
+		path - 当前路径下,小说保存名称(string)
+		text - 章节内容(string)
+
+	Returns:
+		无
+
+	Modify:
+		2017-05-06
+	""""""
+	def Writer(self, name, path, text):
+		write_flag = True
+		with open(path, 'a', encoding='utf-8') as f:
+			f.write(name + '\n\n')
+			for each in text:
+				if each == 'h':
+					write_flag = False
+				if write_flag == True and each != ' ':
+					f.write(each)
+				if write_flag == True and each == '\r':
+					f.write('\n')			
+			f.write('\n\n')
+
+if __name__ == ""__main__"":
+	print(""\n\t\t欢迎使用《笔趣看》小说下载小工具\n\n\t\t作者:Jack-Cui\t时间:2017-05-06\n"")
+	print(""*************************************************************************"")
+	
+	#小说地址
+	target_url = str(input(""请输入小说目录下载地址:\n""))
+
+	#实例化下载类
+	d = download(target = target_url)
+	name, numbers, url_dict = d.get_download_url()
+	if name in os.listdir():
+		os.remove(name)
+	index = 1
+
+	#下载中
+	print(""《%s》下载中:"" % name[:-4])
+	for key, value in url_dict.items():
+		d.Writer(key, name, d.Downloader(value))
+		sys.stdout.write(""已下载:%.3f%%"" %  float(index/numbers) + '\r')
+		sys.stdout.flush()
+		index += 1	
+
+	print(""《%s》下载完成！"" % name[:-4])
+
+	
+"
+input_data.py,"""""""Functions for downloading and reading MNIST data.""""""
+from __future__ import print_function
+import gzip
+import os
+import urllib
+import numpy
+SOURCE_URL = 'http://yann.lecun.com/exdb/mnist/'
+def maybe_download(filename, work_directory):
+  """"""Download the data from Yann's website, unless it's already here.""""""
+  if not os.path.exists(work_directory):
+    os.mkdir(work_directory)
+  filepath = os.path.join(work_directory, filename)
+  if not os.path.exists(filepath):
+    filepath, _ = urllib.urlretrieve(SOURCE_URL + filename, filepath)
+    statinfo = os.stat(filepath)
+    print('Succesfully downloaded', filename, statinfo.st_size, 'bytes.')
+  return filepath
+def _read32(bytestream):
+  dt = numpy.dtype(numpy.uint32).newbyteorder('>')
+  return numpy.frombuffer(bytestream.read(4), dtype=dt)
+def extract_images(filename):
+  """"""Extract the images into a 4D uint8 numpy array [index, y, x, depth].""""""
+  print('Extracting', filename)
+  with gzip.open(filename) as bytestream:
+    magic = _read32(bytestream)
+    if magic != 2051:
+      raise ValueError(
+          'Invalid magic number %d in MNIST image file: %s' %
+          (magic, filename))
+    num_images = _read32(bytestream)
+    rows = _read32(bytestream)
+    cols = _read32(bytestream)
+    buf = bytestream.read(rows * cols * num_images)
+    data = numpy.frombuffer(buf, dtype=numpy.uint8)
+    data = data.reshape(num_images, rows, cols, 1)
+    return data
+def dense_to_one_hot(labels_dense, num_classes=10):
+  """"""Convert class labels from scalars to one-hot vectors.""""""
+  num_labels = labels_dense.shape[0]
+  index_offset = numpy.arange(num_labels) * num_classes
+  labels_one_hot = numpy.zeros((num_labels, num_classes))
+  labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
+  return labels_one_hot
+def extract_labels(filename, one_hot=False):
+  """"""Extract the labels into a 1D uint8 numpy array [index].""""""
+  print('Extracting', filename)
+  with gzip.open(filename) as bytestream:
+    magic = _read32(bytestream)
+    if magic != 2049:
+      raise ValueError(
+          'Invalid magic number %d in MNIST label file: %s' %
+          (magic, filename))
+    num_items = _read32(bytestream)
+    buf = bytestream.read(num_items)
+    labels = numpy.frombuffer(buf, dtype=numpy.uint8)
+    if one_hot:
+      return dense_to_one_hot(labels)
+    return labels
+class DataSet(object):
+  def __init__(self, images, labels, fake_data=False):
+    if fake_data:
+      self._num_examples = 10000
+    else:
+      assert images.shape[0] == labels.shape[0], (
+          ""images.shape: %s labels.shape: %s"" % (images.shape,
+                                                 labels.shape))
+      self._num_examples = images.shape[0]
+      # Convert shape from [num examples, rows, columns, depth]
+      # to [num examples, rows*columns] (assuming depth == 1)
+      assert images.shape[3] == 1
+      images = images.reshape(images.shape[0],
+                              images.shape[1] * images.shape[2])
+      # Convert from [0, 255] -> [0.0, 1.0].
+      images = images.astype(numpy.float32)
+      images = numpy.multiply(images, 1.0 / 255.0)
+    self._images = images
+    self._labels = labels
+    self._epochs_completed = 0
+    self._index_in_epoch = 0
+  @property
+  def images(self):
+    return self._images
+  @property
+  def labels(self):
+    return self._labels
+  @property
+  def num_examples(self):
+    return self._num_examples
+  @property
+  def epochs_completed(self):
+    return self._epochs_completed
+  def next_batch(self, batch_size, fake_data=False):
+    """"""Return the next `batch_size`examples from this data set.""""""
+    if fake_data:
+      fake_image = [1.0 for _ in xrange(784)]
+      fake_label = 0
+      return [fake_image for _ in xrange(batch_size)], [
+          fake_label for _ in xrange(batch_size)]
+    start = self._index_in_epoch
+    self._index_in_epoch += batch_size
+    if self._index_in_epoch > self._num_examples:
+      # Finished epoch
+      self._epochs_completed += 1
+      # Shuffle the data
+      perm = numpy.arange(self._num_examples)
+      numpy.random.shuffle(perm)
+      self._images = self._images[perm]
+      self._labels = self._labels[perm]
+      # Start next epoch
+      start = 0
+      self._index_in_epoch = batch_size
+      assert batch_size <= self._num_examples
+    end = self._index_in_epoch
+    return self._images[start:end], self._labels[start:end]
+def read_data_sets(train_dir, fake_data=False, one_hot=False):
+  class DataSets(object):
+    pass
+  data_sets = DataSets()
+  if fake_data:
+    data_sets.train = DataSet([], [], fake_data=True)
+    data_sets.validation = DataSet([], [], fake_data=True)
+    data_sets.test = DataSet([], [], fake_data=True)
+    return data_sets
+  TRAIN_IMAGES = 'train-images-idx3-ubyte.gz'
+  TRAIN_LABELS = 'train-labels-idx1-ubyte.gz'
+  TEST_IMAGES = 't10k-images-idx3-ubyte.gz'
+  TEST_LABELS = 't10k-labels-idx1-ubyte.gz'
+  VALIDATION_SIZE = 5000
+  local_file = maybe_download(TRAIN_IMAGES, train_dir)
+  train_images = extract_images(local_file)
+  local_file = maybe_download(TRAIN_LABELS, train_dir)
+  train_labels = extract_labels(local_file, one_hot=one_hot)
+  local_file = maybe_download(TEST_IMAGES, train_dir)
+  test_images = extract_images(local_file)
+  local_file = maybe_download(TEST_LABELS, train_dir)
+  test_labels = extract_labels(local_file, one_hot=one_hot)
+  validation_images = train_images[:VALIDATION_SIZE]
+  validation_labels = train_labels[:VALIDATION_SIZE]
+  train_images = train_images[VALIDATION_SIZE:]
+  train_labels = train_labels[VALIDATION_SIZE:]
+  data_sets.train = DataSet(train_images, train_labels)
+  data_sets.validation = DataSet(validation_images, validation_labels)
+  data_sets.test = DataSet(test_images, test_labels)
+  return data_sets
+",21.0,0,1,0.0,10,1.0,132.0,0,"""""""Functions for downloading and reading MNIST data.""""""
+from __future__ import print_function
+import gzip
+import os
+import urllib
+import numpy
+SOURCE_URL = 'http://yann.lecun.com/exdb/mnist/'
+def maybe_download(filename, work_directory):
+  """"""Download the data from Yann's website, unless it's already here.""""""
+  if not os.path.exists(work_directory):
+    os.mkdir(work_directory)
+  filepath = os.path.join(work_directory, filename)
+  if not os.path.exists(filepath):
+    filepath, _ = urllib.urlretrieve(SOURCE_URL + filename, filepath)
+    statinfo = os.stat(filepath)
+    print('Succesfully downloaded', filename, statinfo.st_size, 'bytes.')
+  return filepath
+def _read32(bytestream):
+  dt = numpy.dtype(numpy.uint32).newbyteorder('>')
+  return numpy.frombuffer(bytestream.read(4), dtype=dt)
+def extract_images(filename):
+  """"""Extract the images into a 4D uint8 numpy array [index, y, x, depth].""""""
+  print('Extracting', filename)
+  with gzip.open(filename) as bytestream:
+    magic = _read32(bytestream)
+    if magic != 2051:
+      raise ValueError(
+          'Invalid magic number %d in MNIST image file: %s' %
+          (magic, filename))
+    num_images = _read32(bytestream)
+    rows = _read32(bytestream)
+    cols = _read32(bytestream)
+    buf = bytestream.read(rows * cols * num_images)
+    data = numpy.frombuffer(buf, dtype=numpy.uint8)
+    data = data.reshape(num_images, rows, cols, 1)
+    return data
+def dense_to_one_hot(labels_dense, num_classes=10):
+  """"""Convert class labels from scalars to one-hot vectors.""""""
+  num_labels = labels_dense.shape[0]
+  index_offset = numpy.arange(num_labels) * num_classes
+  labels_one_hot = numpy.zeros((num_labels, num_classes))
+  labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
+  return labels_one_hot
+def extract_labels(filename, one_hot=False):
+  """"""Extract the labels into a 1D uint8 numpy array [index].""""""
+  print('Extracting', filename)
+  with gzip.open(filename) as bytestream:
+    magic = _read32(bytestream)
+    if magic != 2049:
+      raise ValueError(
+          'Invalid magic number %d in MNIST label file: %s' %
+          (magic, filename))
+    num_items = _read32(bytestream)
+    buf = bytestream.read(num_items)
+    labels = numpy.frombuffer(buf, dtype=numpy.uint8)
+    if one_hot:
+      return dense_to_one_hot(labels)
+    return labels
+class DataSet(object):
+  def __init__(self, images, labels, fake_data=False):
+    if fake_data:
+      self._num_examples = 10000
+    else:
+      assert images.shape[0] == labels.shape[0], (
+          ""images.shape: %s labels.shape: %s"" % (images.shape,
+                                                 labels.shape))
+      self._num_examples = images.shape[0]
+      # Convert shape from [num examples, rows, columns, depth]
+      # to [num examples, rows*columns] (assuming depth == 1)
+      assert images.shape[3] == 1
+      images = images.reshape(images.shape[0],
+                              images.shape[1] * images.shape[2])
+      # Convert from [0, 255] -> [0.0, 1.0].
+      images = images.astype(numpy.float32)
+      images = numpy.multiply(images, 1.0 / 255.0)
+    self._images = images
+    self._labels = labels
+    self._epochs_completed = 0
+    self._index_in_epoch = 0
+  @property
+  def images(self):
+    return self._images
+  @property
+  def labels(self):
+    return self._labels
+  @property
+  def num_examples(self):
+    return self._num_examples
+  @property
+  def epochs_completed(self):
+    return self._epochs_completed
+  def next_batch(self, batch_size, fake_data=False):
+    """"""Return the next `batch_size`examples from this data set.""""""
+    if fake_data:
+      fake_image = [1.0 for _ in xrange(784)]
+      fake_label = 0
+      return [fake_image for _ in xrange(batch_size)], [
+          fake_label for _ in xrange(batch_size)]
+    start = self._index_in_epoch
+    self._index_in_epoch += batch_size
+    if self._index_in_epoch > self._num_examples:
+      # Finished epoch
+      self._epochs_completed += 1
+      # Shuffle the data
+      perm = numpy.arange(self._num_examples)
+      numpy.random.shuffle(perm)
+      self._images = self._images[perm]
+      self._labels = self._labels[perm]
+      # Start next epoch
+      start = 0
+      self._index_in_epoch = batch_size
+      assert batch_size <= self._num_examples
+    end = self._index_in_epoch
+    return self._images[start:end], self._labels[start:end]
+def read_data_sets(train_dir, fake_data=False, one_hot=False):
+  class DataSets(object):
+    pass
+  data_sets = DataSets()
+  if fake_data:
+    data_sets.train = DataSet([], [], fake_data=True)
+    data_sets.validation = DataSet([], [], fake_data=True)
+    data_sets.test = DataSet([], [], fake_data=True)
+    return data_sets
+  TRAIN_IMAGES = 'train-images-idx3-ubyte.gz'
+  TRAIN_LABELS = 'train-labels-idx1-ubyte.gz'
+  TEST_IMAGES = 't10k-images-idx3-ubyte.gz'
+  TEST_LABELS = 't10k-labels-idx1-ubyte.gz'
+  VALIDATION_SIZE = 5000
+  local_file = maybe_download(TRAIN_IMAGES, train_dir)
+  train_images = extract_images(local_file)
+  local_file = maybe_download(TRAIN_LABELS, train_dir)
+  train_labels = extract_labels(local_file, one_hot=one_hot)
+  local_file = maybe_download(TEST_IMAGES, train_dir)
+  test_images = extract_images(local_file)
+  local_file = maybe_download(TEST_LABELS, train_dir)
+  test_labels = extract_labels(local_file, one_hot=one_hot)
+  validation_images = train_images[:VALIDATION_SIZE]
+  validation_labels = train_labels[:VALIDATION_SIZE]
+  train_images = train_images[VALIDATION_SIZE:]
+  train_labels = train_labels[VALIDATION_SIZE:]
+  data_sets.train = DataSet(train_images, train_labels)
+  data_sets.validation = DataSet(validation_images, validation_labels)
+  data_sets.test = DataSet(test_images, test_labels)
+  return data_sets
+"
+pdm_build.py,"import os
+from typing import Any, Dict
+
+from pdm.backend.hooks import Context
+
+TIANGOLO_BUILD_PACKAGE = os.getenv(""TIANGOLO_BUILD_PACKAGE"", ""fastapi"")
+
+
+def pdm_build_initialize(context: Context) -> None:
+    metadata = context.config.metadata
+    # Get custom config for the current package, from the env var
+    config: Dict[str, Any] = context.config.data[""tool""][""tiangolo""][
+        ""_internal-slim-build""
+    ][""packages""].get(TIANGOLO_BUILD_PACKAGE)
+    if not config:
+        return
+    project_config: Dict[str, Any] = config[""project""]
+    # Override main [project] configs with custom configs for this package
+    for key, value in project_config.items():
+        metadata[key] = value
+",3.0,0,0,0.0,2,1.0,14.0,0,"import os
+from typing import Any, Dict
+
+from pdm.backend.hooks import Context
+
+TIANGOLO_BUILD_PACKAGE = os.getenv(""TIANGOLO_BUILD_PACKAGE"", ""fastapi"")
+
+
+def pdm_build_initialize(context: Context) -> None:
+    metadata = context.config.metadata
+    # Get custom config for the current package, from the env var
+    config: Dict[str, Any] = context.config.data[""tool""][""tiangolo""][
+        ""_internal-slim-build""
+    ][""packages""].get(TIANGOLO_BUILD_PACKAGE)
+    if not config:
+        return
+    project_config: Dict[str, Any] = config[""project""]
+    # Override main [project] configs with custom configs for this package
+    for key, value in project_config.items():
+        metadata[key] = value
+"
+Base Converter Number system.py,"def base_check(xnumber, xbase):
+    for char in xnumber[len(xnumber) - 1]:
+        if int(char) >= int(xbase):
+            return False
+    return True
+
+
+def convert_from_10(xnumber, xbase, arr, ybase):
+    if int(xbase) == 2 or int(xbase) == 4 or int(xbase) == 6 or int(xbase) == 8:
+
+        if xnumber == 0:
+            return arr
+        else:
+            quotient = int(xnumber) // int(xbase)
+            remainder = int(xnumber) % int(xbase)
+            arr.append(remainder)
+            dividend = quotient
+            convert_from_10(dividend, xbase, arr, base)
+    elif int(xbase) == 16:
+        if int(xnumber) == 0:
+            return arr
+        else:
+            quotient = int(xnumber) // int(xbase)
+            remainder = int(xnumber) % int(xbase)
+            if remainder > 9:
+                if remainder == 10:
+                    remainder = ""A""
+                if remainder == 11:
+                    remainder = ""B""
+                if remainder == 12:
+                    remainder = ""C""
+                if remainder == 13:
+                    remainder = ""D""
+                if remainder == 14:
+                    remainder = ""E""
+                if remainder == 15:
+                    remainder = ""F""
+            arr.append(remainder)
+            dividend = quotient
+            convert_from_10(dividend, xbase, arr, ybase)
+
+
+def convert_to_10(xnumber, xbase, arr, ybase):
+    if int(xbase) == 10:
+        for char in xnumber:
+            arr.append(char)
+        flipped = arr[::-1]
+        ans = 0
+        j = 0
+
+        for i in flipped:
+            ans = ans + (int(i) * (int(ybase) ** j))
+            j = j + 1
+        return ans
+
+
+arrayfrom = []
+arrayto = []
+is_base_possible = False
+number = input(""Enter the number you would like to convert: "")
+
+while not is_base_possible:
+    base = input(""What is the base of this number? "")
+    is_base_possible = base_check(number, base)
+    if not is_base_possible:
+        print(f""The number {number} is not a base {base} number"")
+        base = input
+    else:
+        break
+dBase = input(""What is the base you would like to convert to? "")
+if int(base) == 10:
+    convert_from_10(number, dBase, arrayfrom, base)
+    answer = arrayfrom[::-1]  # reverses the array
+    print(f""In base {dBase} this number is: "")
+    print(*answer, sep="""")
+elif int(dBase) == 10:
+    answer = convert_to_10(number, dBase, arrayto, base)
+    print(f""In base {dBase} this number is: {answer} "")
+else:
+    number = convert_to_10(number, 10, arrayto, base)
+    convert_from_10(number, dBase, arrayfrom, base)
+    answer = arrayfrom[::-1]
+    print(f""In base {dBase} this number is: "")
+    print(*answer, sep="""")
+",24.0,1,1,0.0,51,1.0,75.0,0,"def base_check(xnumber, xbase):
+    for char in xnumber[len(xnumber) - 1]:
+        if int(char) >= int(xbase):
+            return False
+    return True
+
+
+def convert_from_10(xnumber, xbase, arr, ybase):
+    if int(xbase) == 2 or int(xbase) == 4 or int(xbase) == 6 or int(xbase) == 8:
+
+        if xnumber == 0:
+            return arr
+        else:
+            quotient = int(xnumber) // int(xbase)
+            remainder = int(xnumber) % int(xbase)
+            arr.append(remainder)
+            dividend = quotient
+            convert_from_10(dividend, xbase, arr, base)
+    elif int(xbase) == 16:
+        if int(xnumber) == 0:
+            return arr
+        else:
+            quotient = int(xnumber) // int(xbase)
+            remainder = int(xnumber) % int(xbase)
+            if remainder > 9:
+                if remainder == 10:
+                    remainder = ""A""
+                if remainder == 11:
+                    remainder = ""B""
+                if remainder == 12:
+                    remainder = ""C""
+                if remainder == 13:
+                    remainder = ""D""
+                if remainder == 14:
+                    remainder = ""E""
+                if remainder == 15:
+                    remainder = ""F""
+            arr.append(remainder)
+            dividend = quotient
+            convert_from_10(dividend, xbase, arr, ybase)
+
+
+def convert_to_10(xnumber, xbase, arr, ybase):
+    if int(xbase) == 10:
+        for char in xnumber:
+            arr.append(char)
+        flipped = arr[::-1]
+        ans = 0
+        j = 0
+
+        for i in flipped:
+            ans = ans + (int(i) * (int(ybase) ** j))
+            j = j + 1
+        return ans
+
+
+arrayfrom = []
+arrayto = []
+is_base_possible = False
+number = input(""Enter the number you would like to convert: "")
+
+while not is_base_possible:
+    base = input(""What is the base of this number? "")
+    is_base_possible = base_check(number, base)
+    if not is_base_possible:
+        print(f""The number {number} is not a base {base} number"")
+        base = input
+    else:
+        break
+dBase = input(""What is the base you would like to convert to? "")
+if int(base) == 10:
+    convert_from_10(number, dBase, arrayfrom, base)
+    answer = arrayfrom[::-1]  # reverses the array
+    print(f""In base {dBase} this number is: "")
+    print(*answer, sep="""")
+elif int(dBase) == 10:
+    answer = convert_to_10(number, dBase, arrayto, base)
+    print(f""In base {dBase} this number is: {answer} "")
+else:
+    number = convert_to_10(number, 10, arrayto, base)
+    convert_from_10(number, dBase, arrayfrom, base)
+    answer = arrayfrom[::-1]
+    print(f""In base {dBase} this number is: "")
+    print(*answer, sep="""")
+"
+updateReadme.py,"#!/usr/bin/env python3
+
+# Script by Steven Black
+# https://github.com/StevenBlack
+#
+# This Python script will update the readme files in this repo.
+
+import json
+import os
+import time
+from string import Template
+
+# Project Settings
+BASEDIR_PATH = os.path.dirname(os.path.realpath(__file__))
+README_TEMPLATE = os.path.join(BASEDIR_PATH, ""readme_template.md"")
+README_FILENAME = ""readme.md""
+README_DATA_FILENAME = ""readmeData.json""
+
+
+def main():
+    s = Template(
+        ""${description} | [Readme](https://github.com/StevenBlack/""
+        ""hosts/blob/master/${location}readme.md) | ""
+        ""[link](https://raw.githubusercontent.com/StevenBlack/""
+        ""hosts/master/${location}hosts) | ""
+        ""${fmtentries} | ""
+        ""[link](http://sbc.io/hosts/${location}hosts)""
+    )
+    with open(README_DATA_FILENAME, ""r"", encoding=""utf-8"", newline=""\n"") as f:
+        data = json.load(f)
+
+    keys = list(data.keys())
+    # Sort by the number of en-dashes in the key
+    # and then by the key string itself.
+    keys.sort(key=lambda item: (item.replace(""-only"", """").count(""-""), item.replace(""-only"", """")))
+
+    toc_rows = """"
+    for key in keys:
+        data[key][""fmtentries""] = ""{:,}"".format(data[key][""entries""])
+        if key == ""base"":
+            data[key][""description""] = ""Unified hosts = **(adware + malware)**""
+        else:
+            if data[key][""no_unified_hosts""]:
+                data[key][""description""] = (
+                    ""**"" + key.replace(""-only"", """").replace(""-"", "" + "") + ""**""
+                )
+            else:
+                data[key][""description""] = (
+                    ""Unified hosts **+ "" + key.replace(""-"", "" + "") + ""**""
+                )
+
+        if ""\\"" in data[key][""location""]:
+            data[key][""location""] = data[key][""location""].replace(""\\"", ""/"")
+
+        toc_rows += s.substitute(data[key]) + ""\n""
+
+    row_defaults = {
+        ""name"": """",
+        ""homeurl"": """",
+        ""url"": """",
+        ""license"": """",
+        ""issues"": """",
+        ""description"": """",
+    }
+
+    t = Template(
+        ""${name} |[link](${homeurl})""
+        "" | [raw](${url}) | ${license} | [issues](${issues})| ${description}""
+    )
+    size_history_graph = ""![Size history](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts_file_size_history.png)""
+    for key in keys:
+        extensions = key.replace(""-only"", """").replace(""-"", "", "")
+        extensions_str = ""* Extensions: **"" + extensions + ""**.""
+        if data[key][""no_unified_hosts""]:
+            extensions_header = ""Limited to the extensions: "" + extensions
+        else:
+            extensions_header = ""Unified hosts file with "" + extensions + "" extensions""
+
+        source_rows = """"
+        source_list = data[key][""sourcesdata""]
+
+        for source in source_list:
+            this_row = {}
+            this_row.update(row_defaults)
+            this_row.update(source)
+            source_rows += t.substitute(this_row) + ""\n""
+
+        with open(
+            os.path.join(data[key][""location""], README_FILENAME),
+            ""wt"",
+            encoding=""utf-8"",
+            newline=""\n"",
+        ) as out:
+            for line in open(README_TEMPLATE, encoding=""utf-8"", newline=""\n""):
+                line = line.replace(
+                    ""@GEN_DATE@"", time.strftime(""%B %d %Y"", time.gmtime())
+                )
+                line = line.replace(""@EXTENSIONS@"", extensions_str)
+                line = line.replace(""@EXTENSIONS_HEADER@"", extensions_header)
+                line = line.replace(
+                    ""@NUM_ENTRIES@"", ""{:,}"".format(data[key][""entries""])
+                )
+                line = line.replace(
+                    ""@SUBFOLDER@"", os.path.join(data[key][""location""], """")
+                )
+                line = line.replace(""@TOCROWS@"", toc_rows)
+                line = line.replace(""@SOURCEROWS@"", source_rows)
+                # insert the size graph on the home readme only, for now.
+                if key == ""base"":
+                    line = line.replace(
+                        ""@SIZEHISTORY@"", size_history_graph
+                    )
+                else:
+                    line = line.replace(
+                        ""@SIZEHISTORY@"", ""![Size history](stats.png)"")
+
+                out.write(line)
+
+
+if __name__ == ""__main__"":
+    main()
+",11.0,0,1,0.0,23,1.0,95.0,0,"#!/usr/bin/env python3
+
+# Script by Steven Black
+# https://github.com/StevenBlack
+#
+# This Python script will update the readme files in this repo.
+
+import json
+import os
+import time
+from string import Template
+
+# Project Settings
+BASEDIR_PATH = os.path.dirname(os.path.realpath(__file__))
+README_TEMPLATE = os.path.join(BASEDIR_PATH, ""readme_template.md"")
+README_FILENAME = ""readme.md""
+README_DATA_FILENAME = ""readmeData.json""
+
+
+def main():
+    s = Template(
+        ""${description} | [Readme](https://github.com/StevenBlack/""
+        ""hosts/blob/master/${location}readme.md) | ""
+        ""[link](https://raw.githubusercontent.com/StevenBlack/""
+        ""hosts/master/${location}hosts) | ""
+        ""${fmtentries} | ""
+        ""[link](http://sbc.io/hosts/${location}hosts)""
+    )
+    with open(README_DATA_FILENAME, ""r"", encoding=""utf-8"", newline=""\n"") as f:
+        data = json.load(f)
+
+    keys = list(data.keys())
+    # Sort by the number of en-dashes in the key
+    # and then by the key string itself.
+    keys.sort(key=lambda item: (item.replace(""-only"", """").count(""-""), item.replace(""-only"", """")))
+
+    toc_rows = """"
+    for key in keys:
+        data[key][""fmtentries""] = ""{:,}"".format(data[key][""entries""])
+        if key == ""base"":
+            data[key][""description""] = ""Unified hosts = **(adware + malware)**""
+        else:
+            if data[key][""no_unified_hosts""]:
+                data[key][""description""] = (
+                    ""**"" + key.replace(""-only"", """").replace(""-"", "" + "") + ""**""
+                )
+            else:
+                data[key][""description""] = (
+                    ""Unified hosts **+ "" + key.replace(""-"", "" + "") + ""**""
+                )
+
+        if ""\\"" in data[key][""location""]:
+            data[key][""location""] = data[key][""location""].replace(""\\"", ""/"")
+
+        toc_rows += s.substitute(data[key]) + ""\n""
+
+    row_defaults = {
+        ""name"": """",
+        ""homeurl"": """",
+        ""url"": """",
+        ""license"": """",
+        ""issues"": """",
+        ""description"": """",
+    }
+
+    t = Template(
+        ""${name} |[link](${homeurl})""
+        "" | [raw](${url}) | ${license} | [issues](${issues})| ${description}""
+    )
+    size_history_graph = ""![Size history](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts_file_size_history.png)""
+    for key in keys:
+        extensions = key.replace(""-only"", """").replace(""-"", "", "")
+        extensions_str = ""* Extensions: **"" + extensions + ""**.""
+        if data[key][""no_unified_hosts""]:
+            extensions_header = ""Limited to the extensions: "" + extensions
+        else:
+            extensions_header = ""Unified hosts file with "" + extensions + "" extensions""
+
+        source_rows = """"
+        source_list = data[key][""sourcesdata""]
+
+        for source in source_list:
+            this_row = {}
+            this_row.update(row_defaults)
+            this_row.update(source)
+            source_rows += t.substitute(this_row) + ""\n""
+
+        with open(
+            os.path.join(data[key][""location""], README_FILENAME),
+            ""wt"",
+            encoding=""utf-8"",
+            newline=""\n"",
+        ) as out:
+            for line in open(README_TEMPLATE, encoding=""utf-8"", newline=""\n""):
+                line = line.replace(
+                    ""@GEN_DATE@"", time.strftime(""%B %d %Y"", time.gmtime())
+                )
+                line = line.replace(""@EXTENSIONS@"", extensions_str)
+                line = line.replace(""@EXTENSIONS_HEADER@"", extensions_header)
+                line = line.replace(
+                    ""@NUM_ENTRIES@"", ""{:,}"".format(data[key][""entries""])
+                )
+                line = line.replace(
+                    ""@SUBFOLDER@"", os.path.join(data[key][""location""], """")
+                )
+                line = line.replace(""@TOCROWS@"", toc_rows)
+                line = line.replace(""@SOURCEROWS@"", source_rows)
+                # insert the size graph on the home readme only, for now.
+                if key == ""base"":
+                    line = line.replace(
+                        ""@SIZEHISTORY@"", size_history_graph
+                    )
+                else:
+                    line = line.replace(
+                        ""@SIZEHISTORY@"", ""![Size history](stats.png)"")
+
+                out.write(line)
+
+
+if __name__ == ""__main__"":
+    main()
+"
+generate_version.py,"#!/usr/bin/env python3
+
+# Note: This file has to live next to setup.py or versioneer will not work
+import argparse
+import os
+import sys
+
+import versioneer
+
+sys.path.insert(0, """")
+
+
+def write_version_info(path) -> None:
+    version = None
+    git_version = None
+
+    try:
+        import _version_meson
+
+        version = _version_meson.__version__
+        git_version = _version_meson.__git_version__
+    except ImportError:
+        version = versioneer.get_version()
+        git_version = versioneer.get_versions()[""full-revisionid""]
+    if os.environ.get(""MESON_DIST_ROOT""):
+        path = os.path.join(os.environ.get(""MESON_DIST_ROOT""), path)
+    with open(path, ""w"", encoding=""utf-8"") as file:
+        file.write(f'__version__=""{version}""\n')
+        file.write(f'__git_version__=""{git_version}""\n')
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        ""-o"",
+        ""--outfile"",
+        type=str,
+        help=""Path to write version info to"",
+        required=False,
+    )
+    parser.add_argument(
+        ""--print"",
+        default=False,
+        action=""store_true"",
+        help=""Whether to print out the version"",
+        required=False,
+    )
+    args = parser.parse_args()
+
+    if args.outfile:
+        if not args.outfile.endswith("".py""):
+            raise ValueError(
+                f""Output file must be a Python file. ""
+                f""Got: {args.outfile} as filename instead""
+            )
+
+        write_version_info(args.outfile)
+
+    if args.print:
+        try:
+            import _version_meson
+
+            version = _version_meson.__version__
+        except ImportError:
+            version = versioneer.get_version()
+        print(version)
+
+
+main()
+",6.0,0,0,0.0,8,1.0,52.0,0,"#!/usr/bin/env python3
+
+# Note: This file has to live next to setup.py or versioneer will not work
+import argparse
+import os
+import sys
+
+import versioneer
+
+sys.path.insert(0, """")
+
+
+def write_version_info(path) -> None:
+    version = None
+    git_version = None
+
+    try:
+        import _version_meson
+
+        version = _version_meson.__version__
+        git_version = _version_meson.__git_version__
+    except ImportError:
+        version = versioneer.get_version()
+        git_version = versioneer.get_versions()[""full-revisionid""]
+    if os.environ.get(""MESON_DIST_ROOT""):
+        path = os.path.join(os.environ.get(""MESON_DIST_ROOT""), path)
+    with open(path, ""w"", encoding=""utf-8"") as file:
+        file.write(f'__version__=""{version}""\n')
+        file.write(f'__git_version__=""{git_version}""\n')
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        ""-o"",
+        ""--outfile"",
+        type=str,
+        help=""Path to write version info to"",
+        required=False,
+    )
+    parser.add_argument(
+        ""--print"",
+        default=False,
+        action=""store_true"",
+        help=""Whether to print out the version"",
+        required=False,
+    )
+    args = parser.parse_args()
+
+    if args.outfile:
+        if not args.outfile.endswith("".py""):
+            raise ValueError(
+                f""Output file must be a Python file. ""
+                f""Got: {args.outfile} as filename instead""
+            )
+
+        write_version_info(args.outfile)
+
+    if args.print:
+        try:
+            import _version_meson
+
+            version = _version_meson.__version__
+        except ImportError:
+            version = versioneer.get_version()
+        print(version)
+
+
+main()
+"

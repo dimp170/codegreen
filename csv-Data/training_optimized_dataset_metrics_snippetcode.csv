@@ -1,0 +1,241 @@
+file_name,snippet,bugs,code_smells,duplicated_lines_density,cognitive_complexity,security_rating,vulnerabilities
+8_puzzle.py,"from queue import PriorityQueue
+from typing import List, Tuple
+
+class PuzzleState:
+    def __init__(self, board: List[List[int]], goal: List[List[int]], moves: int = 0, previous=None):...",0,0,0.0,0,1.0,0
+Anonymous_TextApp.py,"import tkinter as tk
+from PIL import Image, ImageTk
+from twilio.rest import Client
+
+class AnonymousTextApp:...",0,0,0.0,0,1.0,0
+AreaOfTriangle.py,"import math
+
+def calculate_triangle_area(a, b, c):
+    """"
+    Calculate the area of a triangle given its side lengths....",0,0,0.0,0,1.0,0
+Base Converter Number system.py,"**Base Conversion Program**
+==========================
+
+def is_valid_base(number, base):
+    """"Check if a number is valid in a given base""""...",0,0,0.0,0,1.0,0
+Binary Coefficients.py,"def pascal_triangle(line_number):
+    """"
+    Generate Pascal's triangle up to the given line number.
+
+    Args:...",0,0,0.0,0,1.0,0
+BruteForce.py,"import itertools
+import string
+import time
+import datetime
+...",0,0,0.0,0,1.0,0
+Caesar Cipher Encoder  & Decoder.py,"**caesar_cipher.py**
+""""
+CAESAR CIPHER ENCODER/DECODER
+
+Author: InTruder...",0,0,0.0,0,1.0,0
+__main__.py,"""""Allow cookiecutter to be executable from a checkout or zip file.""""
+
+import runpy
+
+def main():...",0,0,0.0,0,1.0,0
+biqukan.py,"# -*- coding:UTF-8 -*-
+from urllib import request
+from bs4 import BeautifulSoup
+import collections
+import re...",0,0,0.0,0,1.0,0
+cleaner.py,"import pandas as pd
+
+# Load dataset
+dataset_path = ""github_code_dataset_with_all_sonar_metrics.csv""
+df = pd.read_csv(dataset_path)...",0,0,0.0,0,1.0,0
+config.py,"# Configuration settings for the application
+
+from src.utils.constants import DEBUG, ERROR, OPENAI
+
+# Logging settings...",0,0,0.0,0,1.0,0
+dangdang_top_500.py,"import requests
+import re
+import json
+
+# Constants...",0,0,0.0,0,1.0,0
+demo_closures.py,"def create_adder(x):
+    """"Create a function that adds x to its input.""""
+    def add(z):
+        return z + x
+    return add...",0,0,0.0,0,1.0,0
+demo_toolbox.py,"import argparse
+import os
+from pathlib import Path
+
+from toolbox import Toolbox...",0,0,0.0,0,1.0,0
+douyin.py,"# -*- coding: utf-8 -*-
+
+import os
+import re
+import json...",0,0,0.0,0,1.0,0
+download_checks.py,"{
+        'url': 'https://s3.amazonaws.com/fast-ai-imageclas/caltech_101.tgz',
+        'size': 131740031,
+        'hash': 'd673425306e98ee4619fcdeef8a0e876'
+    },...",0,0,0.0,0,1.0,0
+encoder_train.py,"from utils.argutils import print_args
+from encoder.train import train
+from pathlib import Path
+import argparse
+...",0,0,0.0,0,1.0,0
+fuck_bilibili_captcha.py,"While the code has some docstrings, they can be improved to provide more context and explanation of what the functions do.
+3. **Function organization**: Some functions, like `mergy_Image` and `get_distance`, perform multiple tasks. Consider breaking them down into smaller functions with single responsibilities.
+4. **Variable naming**: Some variable names, like `bg_location_list` and `fullbg_location_list`, can be shortened to `bg_locs` and `fullbg_locs` for better readability.
+5. **Code repetition**: The code has some repeated blocks, like the ones downloading and processing images. Consider extracting these into separate functions.
+6. **Error handling**: The code does not handle errors well. Consider adding try-except blocks to handle potential exceptions....",0,0,0.0,0,1.0,0
+generate_pxi.py,"import argparse
+import os
+
+from Cython import Tempita
+...",0,0,0.0,0,1.0,0
+generate_version.py,"#!/usr/bin/env python3
+
+""""
+Note: This file has to live next to setup.py or versioneer will not work.
+""""...",0,0,0.0,0,1.0,0
+github-scraper.py,"import os
+import re
+import requests
+from github import Github
+...",0,0,0.0,0,5.0,1
+hatch_build.py,"import os
+from hatchling.builders.hooks.plugin.interface import BuildHookInterface
+from babel.messages.frontend import compile_catalog
+
+class CustomBuildHook(BuildHookInterface):...",0,0,0.0,0,1.0,0
+hubconf.py,"# Copyright (c) Facebook, Inc. and its affiliates.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+""""isort:skip_file""""...",0,0,0.0,0,1.0,0
+idc.py,"import pandas as pd
+
+# Define constants
+DATASET_PATH = ""github_code_dataset_with_efficiency_scores.csv""
+FINAL_FILE_PATH = ""github_code_dataset_no_comments.csv""...",0,0,0.0,0,1.0,0
+idk.py,"import requests
+import pandas as pd
+import os
+
+# Configuration...",0,0,0.0,0,1.0,0
+ikun_basketball.py,"**Changes:**
+
+1. **Simplified imports**: Removed unnecessary imports and grouped related imports together.
+2. **Improved variable naming**: Renamed variables to follow Python's PEP 8 style guide.
+3. **Reduced code duplication**: Extracted common logic into separate functions....",0,0,0.0,0,1.0,0
+input_data.py,"""""Functions for downloading and reading MNIST data.""""
+from __future__ import print_function
+from typing import Tuple, Optional
+import gzip
+import os...",0,0,0.0,0,1.0,0
+linter_plugin.py,"""""
+Certbot PyLint plugin.
+
+The built-in ImportChecker of Pylint does a similar job to ForbidStandardOsModule to detect
+deprecated modules. You can check its behavior as a reference to what is coded here....",0,0,0.0,0,1.0,0
+makeHosts.py,"#!/usr/bin/env python
+
+# Script by gfyoung
+# https://github.com/gfyoung
+#...",0,0,0.0,0,1.0,0
+mixed_tabs_and_spaces.py,"""""
+    Calculate the square of a number.
+
+    Args:
+        x (int): The number to square....",0,0,0.0,0,1.0,0
+mymodule.py,"def generate_full_name(first_name: str, last_name: str) -> str:
+    """"Returns the full name by concatenating first name and last name.""""
+    return f""{first_name} {last_name}""
+
+def add_two_numbers(num1: float, num2: float) -> float:...",0,0,0.0,0,1.0,0
+pdm_build.py,"import os
+from typing import Dict, Any
+
+from pdm.backend.hooks import Context
+...",0,0,0.0,0,1.0,0
+release.py,"""""
+    Update the version in setup.py by incrementing the minor version.
+    """"
+    with open('setup.py', 'r+') as sf:
+        lines = sf.readlines()...",0,0,0.0,0,1.0,0
+release_utils.py,"import argparse
+from typing import Tuple
+
+def get_next_version(release_type: str, current_version: str) -> Tuple[Tuple[int, int, int], str, str]:
+    """"Get the next version based on the release type.""""...",0,0,0.0,0,1.0,0
+run-venv.py,"#!./venv/bin/python
+import re
+import sys
+
+from glances import main...",0,0,0.0,0,1.0,0
+run.py,"#!/usr/bin/python
+import re
+import sys
+from glances import main
+...",0,0,0.0,0,1.0,0
+run_example.py,"# Import the necessary module
+import tutorials.RecommenderSystems.rs_rating_demo as ft
+
+def main():
+    """"...",0,0,0.0,0,1.0,0
+setup.py,"#!/usr/bin/env python
+
+import pathlib
+from setuptools import find_packages, setup
+...",0,0,0.0,0,1.0,0
+shuaia.py,"import os
+import requests
+from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
+import time...",0,0,0.0,0,1.0,0
+synthesizer_preprocess_audio.py,"from synthesizer.preprocess import preprocess_dataset
+from synthesizer.hparams import hparams
+from utils.argutils import print_args
+from pathlib import Path
+import argparse...",0,0,0.0,0,1.0,0
+synthesizer_preprocess_embeds.py,"from synthesizer.preprocess import create_embeddings
+from utils.argutils import print_args
+from pathlib import Path
+import argparse
+...",0,0,0.0,0,1.0,0
+synthesizer_train.py,"from pathlib import Path
+from argparse import ArgumentParser
+
+from synthesizer.hparams import hparams
+from synthesizer.train import train...",0,0,0.0,0,1.0,0
+update.py,"import os
+import sys
+import json
+import re
+import shutil...",0,0,0.0,0,1.0,0
+updateReadme.py,"import json
+import os
+import time
+from string import Template
+...",0,0,0.0,0,1.0,0
+update_version.py,"import os
+import subprocess
+
+def get_git_version():
+    """"...",0,0,0.0,0,1.0,0
+utils.py,"# Numpy and pandas by default assume a narrow screen - this fixes that
+import matplotlib as mpl
+mpl.rcParams['savefig.dpi']= 200
+mpl.rcParams['font.size']=12
+...",0,0,0.0,0,1.0,0
+vocoder_train.py,"import argparse
+from pathlib import Path
+
+from utils.argutils import print_args
+from vocoder.train import train...",0,0,0.0,0,1.0,0
+wechat_public_account.py,"# -*- coding: UTF-8 -*-
+
+import json
+import time
+import pdfkit...",0,0,0.0,0,1.0,0
