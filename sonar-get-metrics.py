@@ -4,7 +4,7 @@ import os
 
 SONARCLOUD_TOKEN = "82a8fe6df3b0391119aa62fd413df6db3707e9b1"
 ORGANIZATION_KEY = "gamify"
-PROJECT_KEY = "dimp170_refined-sonar-analysis"
+PROJECT_KEY = "dimp170_messy-code"
 HEADERS = {"Authorization": f"Bearer {SONARCLOUD_TOKEN}"}
 
 full_results = []
@@ -48,13 +48,13 @@ except FileNotFoundError:
     print(f"Error: Dataset file '{dataset_path}' not found.")
     exit()
 
-
+'''
 df["file_path"] = df["file_path"].apply(lambda x: x.split("/")[-1])
 df["file_path"] = df["file_path"].apply(lambda x: f"{PROJECT_KEY}:{x}")
 df["file_path"] = df["file_path"].apply(lambda x: x.replace(f"{PROJECT_KEY}:", ""))
 
 
-df["file_path"] = df["file_path"].apply(lambda x: f"{PROJECT_KEY}:{x}" if not x.startswith(PROJECT_KEY) else x)
+df["file_path"] = df["file_path"].apply(lambda x: f"{PROJECT_KEY}:{x}" if not x.startswith(PROJECT_KEY) else x)'''
 print(f"Updated Dataset File Paths (First 5): {df['file_path'].head().tolist()}")
 
 df["sonar_component_key"] = df["file_path"].map(sonar_files)

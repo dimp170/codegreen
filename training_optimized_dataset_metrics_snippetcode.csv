@@ -1,0 +1,146 @@
+file_name,snippet,complexity,bugs,code_smells,duplicated_lines_density,cognitive_complexity,security_rating,ncloc,vulnerabilities
+huggingface_transformers_setup.py,"# Copyright 2021 The HuggingFace Team. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at...",6,0,2,0.0,3,1.0,344,0
+3b1b_manim_example_scenes.py,"from manimlib import *
+import numpy as np
+
+# To watch one of these scenes, run the following:
+# manimgl example_scenes.py OpeningManimExample...",21,0,4,0.0,8,1.0,478,0
+binary-husky_gpt_academic_config.py,"""""""
+    以下所有配置也都支持利用环境变量覆写，环境变量配置格式见docker-compose.yml。
+    读取优先级：环境变量 > config_private.py > config.py
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    All the following configurations also support using environment variables to override,...",1,1,3,0.0,2,5.0,235,1
+ultralytics_yolov5_detect.py,"# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+""""""
+Run YOLOv5 detection inference on images, videos, directories, globs, YouTube, webcam, streams, etc.
+
+Usage - sources:...",59,0,4,0.0,155,1.0,242,0
+ultralytics_yolov5_hubconf.py,"# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+""""""
+PyTorch Hub models https://pytorch.org/hub/ultralytics_yolov5.
+
+Usage:...",26,0,3,0.0,25,1.0,95,0
+oobabooga_text-generation-webui_download-model.py,"'''
+Downloads models from Hugging Face to models/username_modelname.
+
+Example:
+python download-model.py facebook/opt-1.3b...",84,0,7,0.0,146,1.0,311,0
+RVC-Boss_GPT-SoVITS_api_v2.py,"""""""
+# WebAPI文档
+
+` python api_v2.py -a 127.0.0.1 -p 9880 -c GPT_SoVITS/configs/tts_infer.yaml `
+...",37,1,14,0.0,40,1.0,255,0
+oobabooga_text-generation-webui_one_click.py,"import argparse
+import glob
+import hashlib
+import json
+import os...",111,0,6,0.0,160,1.0,373,0
+pandas-dev_pandas_setup.py,"#!/usr/bin/env python3
+
+""""""
+Parts of this file were taken from the pyzmq project
+(https://github.com/zeromq/pyzmq) which have been permitted for use under the...",63,0,8,0.0,78,1.0,505,0
+karpathy_nanoGPT_model.py,"""""""
+Full definition of a GPT Language Model, all of it in this single file.
+References:
+1) the official GPT-2 TensorFlow implementation released by OpenAI:
+https://github.com/openai/gpt-2/blob/master/src/model.py...",45,0,1,0.0,33,1.0,221,0
+vllm-project_vllm_collect_env.py,"# SPDX-License-Identifier: Apache-2.0
+
+# ruff: noqa
+# code borrowed from https://github.com/pytorch/pytorch/blob/main/torch/utils/collect_env.py
+...",130,0,7,0.0,133,1.0,533,0
+vllm-project_vllm_setup.py,"# SPDX-License-Identifier: Apache-2.0
+
+import ctypes
+import importlib.util
+import logging...",102,0,3,0.0,133,1.0,448,0
+XingangPan_DragGAN_legacy.py,"# Copyright (c) 2021, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+#
+# NVIDIA CORPORATION and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or...",37,0,26,0.0,43,1.0,239,0
+zhayujie_chatgpt-on-wechat_config.py,"# encoding:utf-8
+
+import json
+import logging
+import os...",38,0,21,0.0,49,1.0,258,0
+sqlmapproject_sqlmap_sqlmap.py,"#!/usr/bin/env python
+
+""""""
+Copyright (c) 2006-2025 sqlmap developers (https://sqlmap.org/)
+See the file 'LICENSE' for copying permission...",57,0,14,0.0,202,1.0,498,0
+huggingface_pytorch-image-models_benchmark.py,"#!/usr/bin/env python3
+"""""" Model Benchmark Script
+
+An inference and train step benchmark script for timm models.
+...",80,0,7,3.6,119,1.0,596,0
+XingangPan_DragGAN_visualizer_drag.py,"# Copyright (c) 2021, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+#
+# NVIDIA CORPORATION and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or...",82,0,7,0.0,106,1.0,318,0
+geekcomputers_Python_bookstore_manangement_system.py,"import os
+
+
+import mysql.connector as mys
+...",79,0,25,0.0,347,1.0,521,0
+unclecode_crawl4ai_main.py,"import asyncio, os
+from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware...",72,0,3,0.0,71,1.0,409,0
+huggingface_pytorch-image-models_inference.py,"#!/usr/bin/env python3
+""""""PyTorch Inference Script
+
+An example inference script that outputs top-k class ids for images in a folder into a csv.
+...",53,0,3,6.7,92,1.0,312,0
+huggingface_pytorch-image-models_validate.py,"#!/usr/bin/env python3
+"""""" ImageNet Validation Script
+
+This is intended to be a lean and easily modifiable ImageNet validation script for evaluating pretrained
+models or training checkpoints against ImageNet or similarly organized image datasets. It prioritizes...",59,0,6,10.1,98,1.0,423,0
+xinntao_Real-ESRGAN_inference_realesrgan_video.py,"import argparse
+import cv2
+import glob
+import mimetypes
+import numpy as np...",56,0,3,0.0,61,1.0,332,0
+feder-cr_Jobs_Applier_AI_Agent_AIHawk_main.py,"import base64
+import sys
+from pathlib import Path
+import traceback
+from typing import List, Optional, Tuple, Dict...",63,0,11,18.7,107,1.0,428,0
+RVC-Project_Retrieval-based-Voice-Conversion-WebUI_api_231006.py,"#api for 231006 release version by Xiaokai
+import os
+import sys
+import json
+import re...",53,0,4,35.6,57,1.0,415,0
+RVC-Project_Retrieval-based-Voice-Conversion-WebUI_api_240604.py,"#api for 240604 release version by Xiaokai
+import os
+import sys
+import json
+import re...",61,0,3,27.7,68,1.0,532,0
+kovidgoyal_kitty_publish.py,"#!/usr/bin/env python
+# License: GPL v3 Copyright: 2017, Kovid Goyal <kovid at kovidgoyal.net>
+
+import argparse
+import base64...",110,0,12,0.0,110,1.0,502,0
+microsoft_cascadia-code_build.py,"import argparse
+import multiprocessing
+import multiprocessing.pool
+import os
+import subprocess...",82,1,10,0.0,171,1.0,608,0
+svc-develop-team_so-vits-svc_utils.py,"import argparse
+import glob
+import json
+import logging
+import os...",94,0,11,0.0,84,1.0,469,0
+Vision-CAIR_MiniGPT-4_demo_v2.py,"import argparse
+import os
+import random
+from collections import defaultdict
+...",77,2,17,0.0,139,1.0,504,0

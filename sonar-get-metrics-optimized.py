@@ -4,7 +4,7 @@ import os
 
 SONARCLOUD_TOKEN = "82a8fe6df3b0391119aa62fd413df6db3707e9b1"
 ORGANIZATION_KEY = "gamify"
-PROJECT_KEY = "dimp170_optimized-code-dataset"
+PROJECT_KEY = "dimp170_messy-code"
 HEADERS = {"Authorization": f"Bearer {SONARCLOUD_TOKEN}"}
 
 full_results = []
@@ -41,7 +41,7 @@ sonar_files = get_sonar_files()
 print(f"Retrieved {len(sonar_files)} indexed files from SonarCloud.")
 
 
-dataset_path = "csv-Data/training_optimized_dataset.csv"
+dataset_path = "formatted_messy_python_data.csv"
 try:
     df = pd.read_csv(dataset_path)
 except FileNotFoundError:
